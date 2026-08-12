@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plataforma de Gestión | Soluciones 3</title>
+  <link rel="stylesheet" href="estilos-plataforma-3.css" />
+</head>
+<body class="platform-shell-page catalog-flow-page">
+  <div class="menu-backdrop" id="menuBackdrop"></div>
+
+  <div class="app-shell">
+    <div class="mobile-controls">
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-label="Abrir menú principal" aria-expanded="false" aria-controls="mainMenu">
+      <span aria-hidden="true">☰</span>
+      <span>Menú</span>
+    </button>
+
+    <nav class="main-menu" id="mainMenu" aria-label="Menú principal">
+      <a href="propuesta-inicio.html" class="main-menu__item main-menu__item--home">
+        <span class="main-menu__icon main-menu__icon--image" aria-hidden="true"><img src="img/logo-cmt.png" alt="" /></span>
+        <span>Inicio</span>
+      </a>
+
+      <a href="propuesta-cadenas-1.html" class="main-menu__item">
+        <span class="main-menu__icon main-menu__icon--image" aria-hidden="true"><img src="img/meb-icono.png" alt="" /></span>
+        <span>MEB CMT</span>
+      </a>
+
+      <a href="#" class="main-menu__item">
+        <span class="main-menu__icon" aria-hidden="true">🛍️</span>
+        <span>Mis gestiones</span>
+      </a>
+
+      <div class="main-menu__group">
+        <button class="main-menu__item main-menu__toggle" type="button" data-menu-group="reuniones" aria-expanded="false">
+          <span class="main-menu__icon" aria-hidden="true">📅</span>
+          <span>Reuniones</span>
+          <span class="main-menu__chevron" aria-hidden="true">+</span>
+        </button>
+        <div class="main-menu__sublist" data-menu-target="reuniones">
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">📝</span>
+            <span>Agendar reunión</span>
+          </a>
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">🕒</span>
+            <span>Reuniones programadas</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="main-menu__group">
+        <button class="main-menu__item main-menu__toggle" type="button" data-menu-group="cursos" aria-expanded="false">
+          <span class="main-menu__icon" aria-hidden="true">🎓</span>
+          <span>Mis cursos</span>
+          <span class="main-menu__chevron" aria-hidden="true">+</span>
+        </button>
+        <div class="main-menu__sublist" data-menu-target="cursos">
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">📘</span>
+            <span>Capacitación</span>
+          </a>
+        </div>
+      </div>
+
+      <a href="propuesta-listado-cubicaje.html" class="main-menu__item">
+        <span class="main-menu__icon" aria-hidden="true">📦</span>
+        <span>Cubicaje</span>
+      </a>
+
+      <a href="#" class="main-menu__item">
+        <span class="main-menu__icon" aria-hidden="true">▶</span>
+        <span>Tutoriales</span>
+      </a>
+
+      <a href="#" class="main-menu__item">
+        <span class="main-menu__icon" aria-hidden="true">⭐</span>
+        <span>Yo soy CMT</span>
+      </a>
+
+      <a href="#" class="main-menu__item main-menu__item--cart">
+        <span class="main-menu__icon" aria-hidden="true">🛒</span>
+        <span>Canasta / carrito</span>
+        <strong id="menuCartCount">0</strong>
+      </a>
+
+      <div class="main-menu__group main-menu__group--user">
+        <button class="main-menu__item main-menu__toggle" type="button" data-menu-group="usuario" aria-expanded="false">
+          <span class="main-menu__icon" aria-hidden="true">👤</span>
+          <span>Mi perfil</span>
+          <span class="main-menu__chevron" aria-hidden="true">+</span>
+        </button>
+        <div class="main-menu__sublist" data-menu-target="usuario">
+          <a href="propuesta-cadenas-1.html" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">👤</span>
+            <span>Yo beneficiario</span>
+          </a>
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">📂</span>
+            <span>Mis gestiones IPS</span>
+          </a>
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">💳</span>
+            <span>Mis tarjetas</span>
+          </a>
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">📍</span>
+            <span>Mis datos de entrega</span>
+          </a>
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">🔒</span>
+            <span>Aviso de privacidad</span>
+          </a>
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">🩺</span>
+            <span>Teleconsulta</span>
+          </a>
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">🚪</span>
+            <span>Cerrar sesión</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="topbar">
+      <button class="topbar__menu" id="menuToggle" type="button" aria-label="Abrir menú de cadenas">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <span>Cadenas</span>
+      </button>
+      <div class="topbar__title">
+        <button class="topbar__search" id="searchToggle" type="button" aria-label="Abrir búsqueda" aria-expanded="false" aria-controls="generalSearchPanel">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+            <path d="m16.5 16.5 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <button class="topbar__selection" id="selectionToggle" type="button" aria-label="Abrir detalles">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 7.5A2.5 2.5 0 0 1 8.5 5h7A2.5 2.5 0 0 1 18 7.5V9h1a1 1 0 0 1 1 1v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8a1 1 0 0 1 1-1h1V7.5ZM8 9h8V7.5A1.5 1.5 0 0 0 14.5 6h-5A1.5 1.5 0 0 0 8 7.5V9Z" fill="currentColor"/>
+        </svg>
+      </button>
+    </header>
+    <button class="mobile-step-back step-back-button" id="mobileStepBack" type="button" aria-label="Regresar" hidden>
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M19 12H5M11 18l-6-6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    </div>
+
+    <div class="frame">
+      <aside class="menu-panel" id="menuPanel" aria-label="Menú de cadenas">
+        <div class="menu-panel__head">
+          <h2>Menú de cadenas</h2>
+          <button id="menuClose" type="button" aria-label="Cerrar menú">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="menu-panel__list chains-side" aria-label="Listado de cadenas">
+          <div class="chains-strip" id="chainsStrip" aria-label="Cadenas principales"></div>
+        </div>
+
+        <div class="menu-panel__foot">Selecciona una cadena para explorar soluciones y detalles.</div>
+      </aside>
+
+      <main>
+        <section class="hero">
+          <div class="hero__header">
+            <img class="hero__icon" id="heroIcon" src="img/cadenas-icon/5-cadenaEnergia-5.png" alt="" aria-hidden="true" />
+            <div class="hero__title-row">
+              <h1 id="heroTitle">Una vista continua para descubrir y seleccionar.</h1>
+              <span class="hero__title-detail" id="heroTitleDetail"></span>
+            </div>
+          </div>
+        </section>
+
+
+        <div class="products-search general-search" id="generalSearchPanel" aria-label="Buscador general">
+          <div class="general-search__mobile-head">
+            <strong>Buscar en el catálogo</strong>
+            <button class="general-search__close" id="searchClose" type="button" aria-label="Cerrar búsqueda">&times;</button>
+          </div>
+          <div class="general-search__field">
+            <span class="general-search__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+                <path d="m16.5 16.5 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <label class="sr-only" for="generalSearchUi">Buscar en el catálogo</label>
+            <input
+              id="generalSearchUi"
+              type="search"
+              placeholder="Buscar en el catálogo"
+              aria-label="Buscar en el catálogo"
+              autocomplete="off"
+            />
+            <button class="general-search__submit" type="button">Buscar</button>
+          </div>
+        </div>
+        <section class="explorer">
+          <section class="list-panel">
+            <div class="section-head">
+              <div>
+                <h2 class="section-title-breadcrumb" id="productsTitle">Catálogo</h2>
+                <p id="productsSubtitle">Selecciona una cadena para ver su oferta.</p>
+              </div>
+            </div>
+            <div class="products-list" id="productsList" hidden></div>
+            <div class="products-list hotspot-catalog-list" id="hotspotCatalogList"></div>
+          </section>
+
+          <section class="product-panel" id="productPanel">
+            <div class="product-panel__head">
+              <button class="step-back-button" id="productClose" type="button" aria-label="Regresar">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Regresar</span>
+              </button>
+            </div>
+            <div class="section-head">
+              <div>
+                <h2 class="section-title-breadcrumb" id="brandProductsTitle">Soluciones</h2>
+                <p id="brandProductsSubtitle">Selecciona un proveedor para ver sus soluciones.</p>
+              </div>
+            </div>
+            <div class="brand-products-list" id="brandProductsList"></div>
+          </section>
+
+          <section class="type-panel" id="typePanel">
+            <div class="product-panel__head">
+              <button class="step-back-button" id="typeClose" type="button" aria-label="Regresar">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Regresar</span>
+              </button>
+            </div>
+            <div class="section-head">
+              <div>
+                <h2 class="section-title-breadcrumb" id="typeProductsTitle">Tipos</h2>
+                <p id="typeProductsSubtitle">Selecciona un tipo para consultar su detalle.</p>
+              </div>
+            </div>
+            <div class="brand-products-list" id="typeProductsList"></div>
+          </section>
+
+          <aside class="selection-panel" id="selectionPanel">
+            <div class="selection-head">
+              <button class="step-back-button" id="selectionClose" type="button" aria-label="Regresar">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Regresar</span>
+              </button>
+            </div>
+
+            <div class="details-content" id="detailsContent"></div>
+          </aside>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="propuesta-soluciones-3.js"></script>
+</body>
+</html>

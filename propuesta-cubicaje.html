@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Propuesta de Cubicaje | CMT</title>
+  <link rel="stylesheet" href="estilos-plataforma-3.css" />
+</head>
+<body class="platform-shell-page cubicaje-page">
+  <div class="app-shell">
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-label="Abrir menú principal" aria-expanded="false" aria-controls="mainMenu">
+      <span aria-hidden="true">&#9776;</span>
+      <span>Menú</span>
+    </button>
+
+    <nav class="main-menu" id="mainMenu" aria-label="Menú principal">
+      <a href="propuesta-inicio.html" class="main-menu__item main-menu__item--home">
+        <span class="main-menu__icon main-menu__icon--image" aria-hidden="true"><img src="img/logo-cmt.png" alt="" /></span>
+        <span>Inicio</span>
+      </a>
+
+      <a href="propuesta-cadenas-1.html" class="main-menu__item">
+        <span class="main-menu__icon main-menu__icon--image" aria-hidden="true"><img src="img/meb-icono.png" alt="" /></span>
+        <span>MEB CMT</span>
+      </a>
+
+      <a href="#" class="main-menu__item">
+        <span class="main-menu__icon" aria-hidden="true">&#128717;</span>
+        <span>Mis gestiones</span>
+      </a>
+
+      <div class="main-menu__group">
+        <button class="main-menu__item main-menu__toggle" type="button" data-menu-group="reuniones" aria-expanded="false">
+          <span class="main-menu__icon" aria-hidden="true">&#128197;</span>
+          <span>Reuniones</span>
+          <span class="main-menu__chevron" aria-hidden="true">+</span>
+        </button>
+        <div class="main-menu__sublist" data-menu-target="reuniones">
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">&#128221;</span>
+            <span>Agendar reunión</span>
+          </a>
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">&#128338;</span>
+            <span>Reuniones programadas</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="main-menu__group">
+        <button class="main-menu__item main-menu__toggle" type="button" data-menu-group="cursos" aria-expanded="false">
+          <span class="main-menu__icon" aria-hidden="true">&#127891;</span>
+          <span>Mis cursos</span>
+          <span class="main-menu__chevron" aria-hidden="true">+</span>
+        </button>
+        <div class="main-menu__sublist" data-menu-target="cursos">
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">&#128216;</span>
+            <span>Capacitación</span>
+          </a>
+        </div>
+      </div>
+
+      <a href="propuesta-listado-cubicaje.html" class="main-menu__item">
+        <span class="main-menu__icon" aria-hidden="true">&#128230;</span>
+        <span>Cubicaje</span>
+      </a>
+
+      <a href="#" class="main-menu__item">
+        <span class="main-menu__icon" aria-hidden="true">&#9654;</span>
+        <span>Tutoriales</span>
+      </a>
+
+      <a href="#" class="main-menu__item">
+        <span class="main-menu__icon" aria-hidden="true">&#11088;</span>
+        <span>Yo soy CMT</span>
+      </a>
+
+      <div class="main-menu__group main-menu__group--user">
+        <button class="main-menu__item main-menu__toggle" type="button" data-menu-group="usuario" aria-expanded="false">
+          <span class="main-menu__icon" aria-hidden="true">&#128100;</span>
+          <span>Mi perfil</span>
+          <span class="main-menu__chevron" aria-hidden="true">+</span>
+        </button>
+        <div class="main-menu__sublist" data-menu-target="usuario">
+          <a href="propuesta-cadenas-1.html" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">&#128100;</span>
+            <span>Yo beneficiario</span>
+          </a>
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">&#128194;</span>
+            <span>Mis gestiones IPS</span>
+          </a>
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">&#128179;</span>
+            <span>Mis tarjetas</span>
+          </a>
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">&#128205;</span>
+            <span>Mis datos de entrega</span>
+          </a>
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">&#128274;</span>
+            <span>Aviso de privacidad</span>
+          </a>
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">&#129658;</span>
+            <span>Teleconsulta</span>
+          </a>
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">&#128682;</span>
+            <span>Cerrar sesión</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="frame">
+      <main class="cubicaje-main" aria-label="Calculadora de cubicaje">
+        <section class="cubicaje-hero">
+          <div>
+            <h1>Cubicaje de soluciones integrales</h1>
+            <p>Busca soluciones por categoría, agrega cantidades al contenido y valida el avance del cubicaje antes de confirmar la selección.</p>
+          </div>
+          <div class="cubicaje-hero__status" aria-live="polite">
+            <span>Cubicaje obtenido</span>
+            <strong id="heroTotal">0%</strong>
+          </div>
+        </section>
+
+        <section class="cubicaje-layout">
+          <aside class="cubicaje-panel cubicaje-summary" aria-label="Cubicaje obtenido">
+            <div class="cubicaje-panel__head">
+              <div>
+                <h2>Cubicaje obtenido</h2>
+                <p>Contenido agregado a la gestión actual.</p>
+              </div>
+              <div class="capacity-ring" id="capacityRing" aria-hidden="true">
+                <span class="capacity-ring__inner" id="ringTotal">0%</span>
+              </div>
+            </div>
+
+            <div class="capacity-bar" aria-hidden="true">
+              <span id="capacityFill"></span>
+            </div>
+
+            <div class="capacity-warning" id="capacityWarning" role="status">
+              El cubicaje supera el 100%. Ajusta cantidades o retira soluciones antes de continuar.
+            </div>
+
+            <div class="capacity-meta">
+              <div class="capacity-meta__item">
+                <span>Soluciones</span>
+                <strong id="totalItems">0</strong>
+              </div>
+              <div class="capacity-meta__item">
+                <span>Categorías</span>
+                <strong id="totalCategories">0</strong>
+              </div>
+              <div class="capacity-meta__item">
+                <span>Disponible</span>
+                <strong id="remainingCapacity">100%</strong>
+              </div>
+            </div>
+
+            <div class="cubicaje-list" id="cubicajeList"></div>
+            <div class="summary-actions">
+              <button class="clear-button" id="clearButton" type="button">Limpiar cubicaje</button>
+              <button class="save-button" id="saveButton" type="button">Guardar cubicaje</button>
+            </div>
+          </aside>
+
+          <section class="cubicaje-panel catalog-panel" aria-label="Soluciones integrales">
+            <div class="cubicaje-panel__head">
+              <div>
+                <h2>Soluciones integrales</h2>
+                <p>Selecciona una categoría para ver sus soluciones o usa el buscador para encontrarlas directamente.</p>
+              </div>
+            </div>
+
+            <div class="catalog-tools">
+              <label class="catalog-search products-search">
+                <span class="sr-only">Buscar solución</span>
+                <input id="productSearch" type="search" placeholder="Buscar refrigerador, lavadora, estufa..." autocomplete="off" />
+              </label>
+              <button class="clear-button" id="resetFilters" type="button">Restablecer</button>
+            </div>
+
+            <div class="category-tabs" id="categoryTabs" aria-label="Categorías de soluciones"></div>
+            <div class="products-grid" id="productsGrid"></div>
+          </section>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="propuesta-cubicaje.js"></script>
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explorador de Cadenas</title>
+  <link rel="stylesheet" href="estilos-plataforma-3.css" />
+</head>
+<body class="platform-shell-page cards-menu-page">
+  <div class="app-shell">
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-label="Abrir menú principal" aria-expanded="false" aria-controls="mainMenu">
+      <span aria-hidden="true">☰</span>
+      <span>Menú</span>
+    </button>
+    <button class="topbar__search cards-search-toggle" id="searchToggle" type="button" aria-label="Abrir búsqueda de cadenas" aria-expanded="false" aria-controls="chainsSearchPanel">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+        <path d="m16.5 16.5 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <nav class="main-menu" id="mainMenu" aria-label="Menú principal">
+      <a href="propuesta-inicio.html" class="main-menu__item main-menu__item--home">
+        <span class="main-menu__icon main-menu__icon--image" aria-hidden="true"><img src="img/logo-cmt.png" alt="" /></span>
+        <span>Inicio</span>
+      </a>
+
+      <a href="propuesta-cadenas-1.html" class="main-menu__item">
+        <span class="main-menu__icon main-menu__icon--image" aria-hidden="true"><img src="img/meb-icono.png" alt="" /></span>
+        <span>MEB CMT</span>
+      </a>
+
+      <a href="#" class="main-menu__item">
+        <span class="main-menu__icon" aria-hidden="true">🛍️</span>
+        <span>Mis gestiones</span>
+      </a>
+
+      <div class="main-menu__group">
+        <button class="main-menu__item main-menu__toggle" type="button" data-menu-group="reuniones" aria-expanded="false">
+          <span class="main-menu__icon" aria-hidden="true">📅</span>
+          <span>Reuniones</span>
+          <span class="main-menu__chevron" aria-hidden="true">+</span>
+        </button>
+        <div class="main-menu__sublist" data-menu-target="reuniones">
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">📝</span>
+            <span>Agendar reunión</span>
+          </a>
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">🕒</span>
+            <span>Reuniones programadas</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="main-menu__group">
+        <button class="main-menu__item main-menu__toggle" type="button" data-menu-group="cursos" aria-expanded="false">
+          <span class="main-menu__icon" aria-hidden="true">🎓</span>
+          <span>Mis cursos</span>
+          <span class="main-menu__chevron" aria-hidden="true">+</span>
+        </button>
+        <div class="main-menu__sublist" data-menu-target="cursos">
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">📘</span>
+            <span>Capacitación</span>
+          </a>
+        </div>
+      </div>
+
+      <a href="propuesta-listado-cubicaje.html" class="main-menu__item">
+        <span class="main-menu__icon" aria-hidden="true">📦</span>
+        <span>Cubicaje</span>
+      </a>
+
+      <a href="#" class="main-menu__item">
+        <span class="main-menu__icon" aria-hidden="true">▶</span>
+        <span>Tutoriales</span>
+      </a>
+
+      <a href="#" class="main-menu__item">
+        <span class="main-menu__icon" aria-hidden="true">⭐</span>
+        <span>Yo soy CMT</span>
+      </a>
+
+      <!--Opción de menú desactivada que sale cuando hay gestión activa-->
+      <!--<a href="#" class="main-menu__item main-menu__item--cart">
+        <span class="main-menu__icon" aria-hidden="true">&#128722;</span>
+        <span>Canasta / carrito</span>
+        <strong id="menuCartCount">0</strong>
+      </a>-->
+
+      <div class="main-menu__group main-menu__group--user">
+        <button class="main-menu__item main-menu__toggle" type="button" data-menu-group="usuario" aria-expanded="false">
+          <span class="main-menu__icon" aria-hidden="true">👤</span>
+          <span>Mi perfil</span>
+          <span class="main-menu__chevron" aria-hidden="true">+</span>
+        </button>
+        <div class="main-menu__sublist" data-menu-target="usuario">
+          <a href="propuesta-cadenas-1.html" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">👤</span>
+            <span>Yo beneficiario</span>
+          </a>
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">📂</span>
+            <span>Mis gestiones IPS</span>
+          </a>
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">💳</span>
+            <span>Mis tarjetas</span>
+          </a>
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">📍</span>
+            <span>Mis datos de entrega</span>
+          </a>
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">🔒</span>
+            <span>Aviso de privacidad</span>
+          </a>
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">🩺</span>
+            <span>Teleconsulta</span>
+          </a>
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">🚪</span>
+            <span>Cerrar sesión</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="frame">
+      <main>
+        <section class="chains-dashboard" id="chainsDashboard" aria-label="Cadenas disponibles">
+          <div class="chains-search products-search general-search" id="chainsSearchPanel" aria-label="Buscador de cadenas">
+            <div class="general-search__mobile-head">
+              <strong>Buscar cadenas</strong>
+              <button class="general-search__close" id="searchClose" type="button" aria-label="Cerrar búsqueda">&times;</button>
+            </div>
+            <div class="general-search__field">
+              <span class="general-search__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+                  <path d="m16.5 16.5 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <label class="sr-only" for="chainsSearch">Buscar cadena</label>
+              <input
+                id="chainsSearch"
+                type="search"
+                placeholder="Buscar cadena"
+                aria-label="Buscar cadena"
+                autocomplete="off"
+              />
+              <button class="general-search__submit" type="button">Buscar</button>
+            </div>
+
+          </div>
+          <div class="chains-card-grid" id="chainsCardGrid">
+            <button
+              class="chain-card"
+              type="button"
+              style="--chain-card-bg: url('img/cadena-1.jpg')"
+              data-chain-id="salud"
+            >
+              <img class="chain-card__icon" src="img/cadenas-icon/1-cadenaSalud-1.png" alt="" aria-hidden="true" />
+              <span class="chain-card__number">01</span>
+              <span class="chain-card__name">Salud</span>
+              <span class="chain-card__description">Cuida tu bienestar con servicios y apoyos para ti y tu familia.</span>
+            </button>
+
+            <button
+              class="chain-card"
+              type="button"
+              style="--chain-card-bg: url('img/cadena-2.jpg')"
+              data-chain-id="alimentacion"
+            >
+              <img class="chain-card__icon" src="img/cadenas-icon/2-cadenaAlimentacion-2.png" alt="" aria-hidden="true" />
+              <span class="chain-card__number">02</span>
+              <span class="chain-card__name">Alimentación</span>
+              <span class="chain-card__description">Fortalece tu nutricion con apoyos alimentarios y habitos saludables.</span>
+            </button>
+
+            <button
+              class="chain-card"
+              type="button"
+              style="--chain-card-bg: url('img/cadena-3.jpg')"
+              data-chain-id="vivienda"
+            >
+              <img class="chain-card__icon" src="img/cadenas-icon/3-cadenaVivienda-3.png" alt="" aria-hidden="true" />
+              <span class="chain-card__number">03</span>
+              <span class="chain-card__name">Vivienda</span>
+              <span class="chain-card__description">Mejora tu hogar con soluciones y apoyos para vivienda digna.</span>
+            </button>
+
+            <button
+              class="chain-card"
+              type="button"
+              style="--chain-card-bg: url('img/cadena-4.jpg')"
+              data-chain-id="medio-ambiente"
+            >
+              <img class="chain-card__icon" src="img/cadenas-icon/4-cadenaMedioAmbiente-4.png" alt="" aria-hidden="true" />
+              <span class="chain-card__number">04</span>
+              <span class="chain-card__name">Medio ambiente</span>
+              <span class="chain-card__description">Protege tu entorno y contribuye a un futuro mas sostenible.</span>
+            </button>
+
+            <button
+              class="chain-card"
+              type="button"
+              style="--chain-card-bg: url('img/cadena-5.jpg')"
+              data-chain-id="energia"
+            >
+              <img class="chain-card__icon" src="img/cadenas-icon/5-cadenaEnergia-5.png" alt="" aria-hidden="true" />
+              <span class="chain-card__number">05</span>
+              <span class="chain-card__name">Energía</span>
+              <span class="chain-card__description">Accede a servicios y apoyos para un uso eficiente de la energia.</span>
+            </button>
+
+            <button
+              class="chain-card"
+              type="button"
+              style="--chain-card-bg: url('img/cadena-6.jpg')"
+              data-chain-id="arte-deporte-juventud"
+            >
+              <img class="chain-card__icon" src="img/cadenas-icon/6-cadenaArteCultura-6.png" alt="" aria-hidden="true" />
+              <span class="chain-card__number">06</span>
+              <span class="chain-card__name">Arte, deporte y juventud</span>
+              <span class="chain-card__description">Desarrolla tu talento y crece con actividades culturales y deportivas.</span>
+            </button>
+
+            <button
+              class="chain-card"
+              type="button"
+              style="--chain-card-bg: url('img/cadena-7.jpg')"
+              data-chain-id="educacion"
+            >
+              <img class="chain-card__icon" src="img/cadenas-icon/7-cadenaEducacion-7.png" alt="" aria-hidden="true" />
+              <span class="chain-card__number">07</span>
+              <span class="chain-card__name">Educación</span>
+              <span class="chain-card__description">Impulsa tu aprendizaje con programas y herramientas educativas.</span>
+            </button>
+
+            <button
+              class="chain-card"
+              type="button"
+              style="--chain-card-bg: url('img/cadena-8.jpg')"
+              data-chain-id="agua"
+            >
+              <img class="chain-card__icon" src="img/cadenas-icon/8-cadenaAgua-8.png" alt="" aria-hidden="true" />
+              <span class="chain-card__number">08</span>
+              <span class="chain-card__name">Agua</span>
+              <span class="chain-card__description">Accede a servicios y programas para el cuidado y uso responsable del agua.</span>
+            </button>
+
+            <button
+              class="chain-card"
+              type="button"
+              style="--chain-card-bg: url('img/cadena-9.jpg')"
+              data-chain-id="innovacion-gestion"
+            >
+              <img class="chain-card__icon" src="img/cadenas-icon/9-cadenaInnovacionGestion-9.png" alt="" aria-hidden="true" />
+              <span class="chain-card__number">09</span>
+              <span class="chain-card__name">Innovación y gestión del conocimiento</span>
+              <span class="chain-card__description">Transforma tus ideas en soluciones que mejoran tu comunidad.</span>
+            </button>
+
+            <button
+              class="chain-card"
+              type="button"
+              style="--chain-card-bg: url('img/cadena-10.jpg')"
+              data-chain-id="seguridad-humana"
+            >
+              <img class="chain-card__icon" src="img/cadenas-icon/10-cadenaSeguridadHumana-10.png" alt="" aria-hidden="true" />
+              <span class="chain-card__number">10</span>
+              <span class="chain-card__name">Seguridad humana</span>
+              <span class="chain-card__description">Promueve acciones para reducir riesgos y proteger a tu comunidad.</span>
+            </button>
+
+            <button
+              class="chain-card"
+              type="button"
+              style="--chain-card-bg: url('img/cadena-11.jpg')"
+              data-chain-id="inclusion-productiva-financiera"
+            >
+              <img class="chain-card__icon" src="img/cadenas-icon/11-cadenaInclusionProductiva-11.png" alt="" aria-hidden="true" />
+              <span class="chain-card__number">11</span>
+              <span class="chain-card__name">Inclusión productiva y financiera</span>
+              <span class="chain-card__description">Impulsa tus proyectos con herramientas productivas y financieras.</span>
+            </button>
+
+          </div>
+        </section>
+
+        <div class="context-row">
+          <div class="breadcrumb" id="breadcrumb"></div>
+        </div>
+
+        <section class="explorer">
+          <section class="list-panel">
+            <div class="section-head">
+              <div>
+                <h2 id="productsTitle">Productos</h2>
+                <p id="productsSubtitle">Selecciona una cadena para ver su oferta.</p>
+              </div>
+            </div>
+            <div class="products-search">
+              <label class="sr-only" for="productsSearch">Buscar producto por nombre</label>
+              <input
+                id="productsSearch"
+                type="search"
+                placeholder="Buscar producto por nombre"
+                aria-label="Buscar producto por nombre en la cadena activa"
+              />
+            </div>
+            <div class="products-list" id="productsList"></div>
+          </section>
+
+          <section class="detail-panel" id="detailPanel">
+            <div class="detail-head">
+              <button id="detailClose" aria-label="Cerrar variantes">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </button>
+            </div>
+            <div class="detail-panel__intro">
+              <h2 id="detailTitle">Selecciona un producto</h2>
+              <p id="detailDescription">Elige una variante para continuar con tu gestión.</p>
+            </div>
+
+            <div class="detail-grid">
+              <div class="detail-copy">
+                <p id="detailCopyText">Selecciona una variante para revisar montos, condiciones y cantidad.</p>
+              </div>
+
+              <div class="variants-block">
+                <h4 id="variantsTitle">Elige una variante</h4>
+                <div class="variants-list" id="variantsList"></div>
+              </div>
+            </div>
+          </section>
+
+          <aside class="selection-panel" id="selectionPanel">
+            <div class="selection-head">
+              <button id="selectionClose" aria-label="Cerrar detalles">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </button>
+            </div>
+
+            <div class="details-content" id="detailsContent"></div>
+          </aside>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="propuesta-cadenas-1.js"></script>
+</body>
+</html>

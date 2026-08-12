@@ -1,0 +1,2123 @@
+    const DATA = [
+      {
+        id: 'salud',
+        name: 'Salud',
+        description: 'Soluciones orientadas al bienestar, prevención y atención comunitaria.',
+        products: [
+          {
+            id: 'botiquin',
+            name: 'Botiquín comunitario',
+            short: 'Insumos esenciales para atención básica.',
+            description: 'Agrupa insumos clave para respuesta inmediata, uso comunitario y operación básica.',
+            variants: [
+              { id: 'botiquin-basico CMT', name: 'Botiquín básico', description: 'Versión inicial para atención primaria.' },
+              { id: 'botiquin-extendido CMT', name: 'Botiquín extendido', description: 'Mayor cobertura de insumos y reposición.' },
+              { id: 'botiquin-movil CMT', name: 'Botiquín móvil', description: 'Formato portátil para brigadas.' }
+            ]
+          },
+          {
+            id: 'equipo-medicion',
+            name: 'Equipo de medición',
+            short: 'Monitoreo rápido de signos y parámetros básicos.',
+            description: 'Permite levantar parámetros de salud de forma sencilla y con trazabilidad básica.',
+            variants: [
+              { id: 'medicion-presion', name: 'Medición de presión', description: 'Equipo para control rutinario.' },
+              { id: 'medicion-glucosa', name: 'Medición de glucosa', description: 'Seguimiento puntual y comunitario.' }
+            ]
+          },
+          {
+            id: 'higiene',
+            name: 'Kit de higiene',
+            short: 'Apoyo preventivo para hogares y comunidades.',
+            description: 'Conjunto de elementos preventivos para reforzar hábitos de higiene y cuidado.',
+            variants: [
+              { id: 'higiene-familiar', name: 'Kit familiar', description: 'Cobertura para uso doméstico.' },
+              { id: 'higiene-escolar', name: 'Kit escolar', description: 'Formato adaptado a espacios educativos.' }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'alimentacion',
+        name: 'Alimentación',
+        description: 'Productos para nutrición, abasto y fortalecimiento alimentario.',
+        products: [
+          {
+            id: 'paquete-alimentario',
+            name: 'Paquete alimentario',
+            short: 'Canasta con insumos de primera necesidad.',
+            description: 'Organiza la oferta alimentaria por cobertura, frecuencia y tipo de beneficiario.',
+            variants: [
+              { id: 'paquete-basico', name: 'Paquete básico', description: 'Cobertura inicial de alimentos esenciales.' },
+              { id: 'paquete-ampliado', name: 'Paquete ampliado', description: 'Incluye mayor variedad y volumen.' }
+            ]
+          },
+          {
+            id: 'modulo-conservacion',
+            name: 'Módulo de conservación',
+            short: 'Apoyo para almacenamiento y manejo.',
+            description: 'Facilita mejores condiciones de resguardo y operación alimentaria.',
+            variants: [
+              { id: 'conservacion-seca', name: 'Conservación seca', description: 'Organización para despensa y resguardo.' },
+              { id: 'conservacion-fria', name: 'Conservación fría', description: 'Para productos que requieren cadena térmica.' }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'vivienda',
+        name: 'Vivienda',
+        description: 'Elementos para mejoramiento, equipamiento y condiciones habitacionales.',
+        products: [
+          {
+            id: 'techo',
+            name: 'Sistema de techo',
+            short: 'Mejoramiento y sustitución de cubierta.',
+            description: 'Permite estructurar opciones de rehabilitación y protección de vivienda.',
+            variants: [
+              { id: 'techo-ligero', name: 'Techo ligero', description: 'Solución de instalación rápida.' },
+              { id: 'techo-termico', name: 'Techo térmico', description: 'Mejor desempeño frente a clima.' }
+            ]
+          },
+          {
+            id: 'piso',
+            name: 'Piso firme',
+            short: 'Intervención para habitabilidad básica.',
+            description: 'Agrupa componentes para sustitución y mejora del piso en vivienda.',
+            variants: [
+              { id: 'piso-inicial', name: 'Piso inicial', description: 'Cobertura mínima de intervención.' },
+              { id: 'piso-ampliado', name: 'Piso ampliado', description: 'Mayor área de cobertura.' }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'medio-ambiente',
+        name: 'Medio ambiente',
+        description: 'Productos orientados a restauración, manejo y cuidado del entorno.',
+        products: [
+          {
+            id: 'reforestacion',
+            name: 'Módulo de reforestación',
+            short: 'Material para restauración y cobertura vegetal.',
+            description: 'Permite armar rutas de implementación por escala y objetivo ambiental.',
+            variants: [
+              { id: 'reforestacion-barrial', name: 'Cobertura barrial', description: 'Escala urbana o comunitaria.' },
+              { id: 'reforestacion-rural', name: 'Cobertura rural', description: 'Intervención de mayor extensión.' }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'energia',
+        name: 'Energía',
+        description: 'Equipamiento principal y complementario para soluciones energéticas y asociadas.',
+        products: [
+          {
+            id: 'cisterna',
+            name: 'Cisterna',
+            short: '',
+            description: '',
+            variants: [
+              { id: 'cisterna-hogar', name: 'Cisterna', description: '' }
+            ]
+          },
+          {
+            id: 'bomba',
+            name: 'Bomba',
+            short: '',
+            description: '',
+            variants: [
+              { id: 'bomba-agua', name: 'Bomba', description: '' }
+            ]
+          },
+          {
+            id: 'panel-solar',
+            name: 'Panel solar',
+            short: '',
+            description: '',
+            variants: [
+              { id: 'panel-solar-550', name: 'Panel solar', description: '' }
+            ]
+          },
+          {
+            id: 'calentador-solar',
+            name: 'Calentador solar a gravedad',
+            short: 'Línea de calentadores solares a gravedad para distintos volúmenes.',
+            description: 'Calentadores solares a gravedad para distintos volúmenes.',
+            variants: [
+              { id: 'calentador-gravedad', name: 'Calentador solar a gravedad', description: 'Modelo general de operación por gravedad.' },
+              { id: 'calentador-gravedad-80', name: 'Calentador Solar de Gravedad 80 L 8 tubos', description: 'Capacidad de 80 L con 8 tubos.' },
+              { id: 'calentador-gravedad-100', name: 'Calentador Solar de Gravedad 100 L 10 tubos', description: 'Capacidad de 100 L con 10 tubos.' },
+              { id: 'calentador-gravedad-120', name: 'Calentador Solar de Gravedad 120 L 12 tubos', description: 'Capacidad de 120 L con 12 tubos.' },
+              { id: 'calentador-gravedad-150', name: 'Calentador Solar de Gravedad 150 L 15 tubos', description: 'Capacidad de 150 L con 15 tubos.' },
+              { id: 'calentador-gravedad-180', name: 'Calentador Solar de Gravedad 180 L 18 tubos', description: 'Capacidad de 180 L con 18 tubos.' },
+              { id: 'calentador-gravedad-200', name: 'Calentador Solar de Gravedad 200 L 20 tubos', description: 'Capacidad de 200 L con 20 tubos.' },
+              { id: 'calentador-gravedad-240', name: 'Calentador Solar de Gravedad 240 L 24 tubos', description: 'Capacidad de 240 L con 24 tubos.' },
+              { id: 'calentador-gravedad-300', name: 'Calentador Solar de Gravedad 300 L 30 tubos', description: 'Capacidad de 300 L con 30 tubos.' }
+            ]
+          },
+          {
+            id: 'calentador-solar-presion',
+            name: 'Calentador solar a presión',
+            short: '',
+            description: '',
+            variants: [
+              { id: 'calentador-presion', name: 'Calentador solar a presión', description: '' }
+            ]
+          },
+          {
+            id: 'refacciones',
+            name: 'Refacciones',
+            short: 'Refacciones y kits para instalación y mantenimiento de calentadores.',
+            description: 'Componentes de reemplazo y mantenimiento para calentadores solares de alta y baja presión.',
+            variants: [
+              { id: 'kit-instalacion', name: 'KIT DE INSTALACIÓN', description: 'Kit base de instalación para calentador solar.' },
+              { id: 'kit-empaques-blancos', name: 'KIT 5 EMPAQUES BLANCOS PARA CALENTADOR SOLAR BAJA PRESIÓN', description: 'Paquete de empaques de refacción para baja presión.' },
+              { id: 'kit-anillos-cubrepolvos', name: 'KIT 5 ANILLOS CUBREPOLVOS NEGRO PARA TUBO DE CALENTADOR SOLAR ALTA Y BAJA PRESIÓN', description: 'Anillos cubrepolvos para tubos de alta y baja presión.' },
+              { id: 'barra-magnesio', name: 'BARRA DE MAGNESIO 3/4 X 30 CM PARA CALENTADOR SOLAR BAJA PRESIÓN', description: 'Barra de protección interna para baja presión.' },
+              { id: 'tubo-refaccion', name: 'TUBO DE REFACCIÓN PARA CALENTADOR SOLAR BAJA PRESIÓN', description: 'Tubo de repuesto para calentador solar.' },
+              { id: 'kit-mantenimiento-alta-presion', name: 'KIT DE MANTENIMIENTO PARA CALENTADOR DE ALTA PRESIÓN 10 Y 12 TUBOS', description: 'Kit de mantenimiento para equipos de alta presión.' }
+            ]
+          },
+          {
+            id: 'bases',
+            name: 'Bases',
+            short: 'Estructuras de soporte para calentadores solares.',
+            description: 'Bases de refacción para configuraciones de alta presión.',
+            variants: [
+              { id: 'base-refaccion-20', name: 'BASE DE REFACCIÓN PARA CALENTADOR SOLAR ALTA PRESIÓN DE 20 TUBOS', description: 'Base de refacción para calentador de 20 tubos.' }
+            ]
+          },
+          {
+            id: 'tinaco-tricapa',
+            name: 'Tinaco tricapa',
+            short: 'Tinacos para almacenamiento de agua en distintas capacidades.',
+            description: 'Incluye línea Tinaco Plus y Tinaco MT Clásico para almacenamiento primario.',
+            variants: [
+              { id: 'tinaco-plus-2500', name: 'TINACO PLUS 2500 L', description: 'Capacidad de 2500 litros.' },
+              { id: 'tinaco-plus-1100', name: 'TINACO PLUS 1100 L', description: 'Capacidad de 1100 litros.' },
+              { id: 'tinaco-plus-800', name: 'TINACO PLUS 800 L', description: 'Capacidad de 800 litros.' },
+              { id: 'tinaco-plus-450', name: 'TINACO PLUS 450 L', description: 'Capacidad de 450 litros.' },
+              { id: 'tinaco-mt-clasico-1100', name: 'TINACO 1100 L MT CLÁSICO', description: 'Modelo MT Clásico de 1100 litros.' },
+              { id: 'tinaco-mt-clasico-800', name: 'TINACO 800 L MT CLÁSICO', description: 'Modelo MT Clásico de 800 litros.' },
+              { id: 'tinaco-mt-clasico-450', name: 'TINACO 450 L MT CLÁSICO', description: 'Modelo MT Clásico de 450 litros.' }
+            ]
+          },
+          {
+            id: 'tamboplas',
+            name: 'Tamboplas',
+            short: 'Depósitos de almacenamiento complementario.',
+            description: 'Línea de tambos para resguardo de agua.',
+            variants: [
+              { id: 'tamboplas-250', name: 'TAMBOPLAS 250 Lts.', description: 'Tamboplas de 250 litros.' }
+            ]
+          },
+          {
+            id: 'tinaco-vertical',
+            name: 'Vertical',
+            short: '',
+            description: '',
+            variants: [
+              { id: 'tinaco-vertical-modelo', name: 'Vertical', description: '' }
+            ]
+          },
+          {
+            id: 'kit-inteligente',
+            name: 'Kit inteligente',
+            short: '',
+            description: '',
+            variants: [
+              { id: 'kit-inteligente-modelo', name: 'Kit inteligente', description: '' }
+            ]
+          },
+          {
+            id: 'presurizador-inteligente',
+            name: 'Presurizador inteligente',
+            short: '',
+            description: '',
+            variants: [
+              { id: 'presurizador-inteligente-modelo', name: 'Presurizador inteligente', description: '' }
+            ]
+          },
+          {
+            id: 'refrigerador',
+            name: 'Refrigerador',
+            short: 'Modelos de refrigeradores para el hogar.',
+            description: 'Incluye refrigeradores manuales, automáticos y TMNF en distintas capacidades.',
+            variants: [
+              { id: 'refri-210-grafito', name: 'Refrigerador Una puerta manual 210 L Grafito Mabe', description: 'Modelo manual de una puerta 210 L color grafito.' },
+              { id: 'refri-251-inox-mate', name: 'REFRIGERADOR AUTOMÁTICO 251.19 L INOXIDABLE MATE', description: 'Modelo automático 251.19 L inoxidable mate.' },
+              { id: 'refri-tmnf-302-sil', name: 'REFRIGERADOR TMNF 302 L MABE SIL', description: 'Modelo TMNF de 302 L Mabe SIL.' },
+              { id: 'refri-360-inox-mate', name: 'REFRIGERADOR AUTOMÁTICO 360L INOXIDABLE MATE', description: 'Modelo automático 360 L inoxidable mate.' },
+              { id: 'refri-400-acero-inoxidable', name: 'REFRIGERADOR AUTOMÁTICO 400 L ACERO INOXIDABLE', description: 'Modelo automático 400 L en acero inoxidable.' },
+              { id: 'refri-210-black-stainless', name: 'Refrigerador Manual 210 L Black Stainless Steel Mabe', description: 'Modelo manual 210 L Black Stainless Steel.' },
+              { id: 'refri-tmnf-302-b-eco', name: 'REFRIGERADOR TMNF 302 L MABE B/ECO', description: 'Modelo TMNF 302 L Mabe B/ECO.' },
+              { id: 'refri-tmnf-513-inx', name: 'REFRIGERADOR TMNF 513 L MABE INX', description: 'Modelo TMNF de 513 L Mabe INX.' },
+              { id: 'refri-1pta-93-bla', name: 'REFRIGERADOR 1PTA 93L MABE BLA', description: 'Modelo de 1 puerta y 93 L Mabe BLA.' }
+            ]
+          },
+          {
+            id: 'lavadora',
+            name: 'Lavadora',
+            short: '',
+            description: '',
+            variants: [
+              { id: 'lavadora-hogar', name: 'Lavadora', description: '' }
+            ]
+          },
+          {
+            id: 'estufa',
+            name: 'Estufa',
+            short: '',
+            description: '',
+            variants: [
+              { id: 'estufa-hogar', name: 'Estufa', description: '' }
+            ]
+          },
+          {
+            id: 'licuadora',
+            name: 'Licuadora',
+            short: '',
+            description: '',
+            variants: [
+              { id: 'licuadora-hogar', name: 'Licuadora', description: '' }
+            ]
+          },
+          {
+            id: 'plancha',
+            name: 'Plancha',
+            short: '',
+            description: '',
+            variants: [
+              { id: 'plancha-hogar', name: 'Plancha', description: '' }
+            ]
+          },
+          {
+            id: 'aire-acondicionado',
+            name: 'Aire acondicionado',
+            short: '',
+            description: '',
+            variants: [
+              { id: 'aire-acondicionado-hogar', name: 'Aire acondicionado', description: '' }
+            ]
+          },
+          {
+            id: 'microondas',
+            name: 'Microondas',
+            short: '',
+            description: '',
+            variants: [
+              { id: 'microondas-hogar', name: 'Microondas', description: '' }
+            ]
+          },
+          {
+            id: 'cafeteras',
+            name: 'Cafeteras',
+            short: 'Equipos para molienda y preparación de café.',
+            description: 'Catálogo de cafeteras automáticas, espresso, percoladoras y modelos multisistema.',
+            variants: [
+              { id: 'molino-cafe', name: 'MOLINO DE CAFÉ', description: 'Molino para preparación de café molido.' },
+              { id: 'cafetera-12-tazas', name: 'CAFETERA AUTOMÁTICA 12 TAZAS CON FILTRO REUTILIZABLE', description: 'Cafetera automática de 12 tazas.' },
+              { id: 'cafetera-inox-15', name: 'Cafetera Inox Automática 15 tazas con filtro reutilizable', description: 'Modelo automático de 15 tazas.' },
+              { id: 'maquina-espresso-individual', name: 'Máquina de Espresso Individual', description: 'Equipo espresso de porción individual.' },
+              { id: 'cafetera-percoladora-6l', name: 'Cafetera Electrica Percoladora 6 L 40 Tazas', description: 'Percoladora de 6 litros para 40 tazas.' },
+              { id: 'maquina-espresso-2', name: 'Maquina Espresso 2 tazas', description: 'Máquina espresso para dos tazas.' },
+              { id: 'cafetera-molino-jarra-acero', name: 'CAFETERA CON MOLINO JARRA ACERO INOXIDABLE', description: 'Cafetera con molino y jarra de acero inoxidable.' },
+              { id: 'cafetera-automatica-10', name: 'Cafetera Automática 10 tazas', description: 'Modelo automático para 10 tazas.' },
+              { id: 'cafetera-multisistema-4en1', name: 'Cafetera multisistema 4 en 1', description: 'Equipo multisistema para distintos métodos.' }
+            ]
+          },
+          {
+            id: 'hornos-y-palomeras',
+            name: 'Hornos Eléctricos y palomeras',
+            short: 'Hornos, freidoras y equipos complementarios.',
+            description: 'Línea de hornos tostadores, air fryer oven y equipos para preparación de alimentos.',
+            variants: [
+              { id: 'horno-tostador-9', name: 'Horno Tostador 9L', description: 'Horno tostador de 9 litros.' },
+              { id: 'horno-tostador-20', name: 'Horno Tostador 20L', description: 'Horno tostador de 20 litros.' },
+              { id: 'horno-tostador-40', name: 'Horno Tostador 40L', description: 'Horno tostador de 40 litros.' },
+              { id: 'air-fryer-oven-25', name: 'AIR FRYER OVEN 25 L', description: 'Freidora tipo horno de 25 litros.' },
+              { id: 'olla-presion-electrica-6', name: 'Olla de presión eléctrica de 6 L con 16 programas', description: 'Olla eléctrica programable de 6 litros.' },
+              { id: 'maquina-palomitas-rj', name: 'Maquina de Palomitas RJ', description: 'Máquina de palomitas para uso doméstico.' }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'arte-deporte-juventud',
+        name: 'Arte, deporte y juventud',
+        description: 'Equipamiento y apoyos para expresión, actividad física y participación juvenil.',
+        products: [
+          {
+            id: 'kit-cultural',
+            name: 'Kit cultural',
+            short: 'Herramientas para talleres y activación comunitaria.',
+            description: 'Agrupa componentes para actividades culturales, artísticas y juveniles.',
+            variants: [
+              { id: 'kit-musica', name: 'Kit de música', description: 'Enfoque en expresión sonora.' },
+              { id: 'kit-visual', name: 'Kit visual', description: 'Material para artes visuales.' }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'educacion',
+        name: 'Educación',
+        description: 'Recursos para aprendizaje, permanencia y operación educativa.',
+        products: [
+          {
+            id: 'paquete-escolar',
+            name: 'Paquete escolar',
+            short: 'Material base para continuidad educativa.',
+            description: 'Estructura apoyos educativos por nivel, uso y volumen.',
+            variants: [
+              { id: 'escolar-primaria', name: 'Paquete primaria', description: 'Para necesidades de educación básica.' },
+              { id: 'escolar-media', name: 'Paquete media superior', description: 'Para continuidad académica.' }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'agua',
+        name: 'Agua',
+        description: 'Infraestructura y componentes para acceso, almacenamiento y distribución.',
+        products: [
+          {
+            id: 'captacion',
+            name: 'Sistema de captación',
+            short: 'Soluciones para recolección y aprovechamiento.',
+            description: 'Integra piezas y tipos de almacenamiento, conducción y filtrado.',
+            variants: [
+              { id: 'captacion-basica', name: 'Captación básica', description: 'Configuración inicial de aprovechamiento.' },
+              { id: 'captacion-filtrado', name: 'Captación con filtrado', description: 'Incluye tratamiento inicial.' }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'innovacion-gestion',
+        name: 'Innovación y gestión del conocimiento',
+        description: 'Herramientas para sistematización, transferencia y fortalecimiento operativo.',
+        products: [
+          {
+            id: 'plataforma',
+            name: 'Plataforma de gestión',
+            short: 'Seguimiento, registro y colaboración.',
+            description: 'Permite estructurar oferta digital con tipos por alcance y uso.',
+            variants: [
+              { id: 'plataforma-base', name: 'Plataforma base', description: 'Operación y trazabilidad inicial.' },
+              { id: 'plataforma-colaborativa', name: 'Plataforma colaborativa', description: 'Más capacidades para equipos.' }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'seguridad-humana',
+        name: 'Seguridad humana',
+        description: 'Equipamiento preventivo y de respuesta para personas y comunidades.',
+        products: [
+          {
+            id: 'kit-prevencion',
+            name: 'Kit de prevención',
+            short: 'Cobertura para atención y preparación básica.',
+            description: 'Organiza soluciones preventivas por contexto y grado de cobertura.',
+            variants: [
+              { id: 'prevencion-familiar', name: 'Prevención familiar', description: 'Uso en vivienda.' },
+              { id: 'prevencion-comunitaria', name: 'Prevención comunitaria', description: 'Uso colectivo o barrial.' }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'inclusion-productiva-financiera',
+        name: 'Inclusión productiva y financiera',
+        description: 'Apoyos y herramientas para actividad económica y acceso financiero.',
+        products: [
+          {
+            id: 'kit-emprendimiento',
+            name: 'Kit de emprendimiento',
+            short: 'Base operativa para activación productiva.',
+            description: 'Permite estructurar apoyos por giro, escala y madurez del proyecto.',
+            variants: [
+              { id: 'emprendimiento-inicial', name: 'Kit inicial', description: 'Punto de partida para operación básica.' },
+              { id: 'emprendimiento-expansion', name: 'Kit de expansión', description: 'Mayor alcance productivo.' }
+            ]
+          }
+        ]
+      }
+    ];
+
+    const ENABLED_CHAIN_IDS = new Set(['agua', 'vivienda']);
+    const SHOW_MANAGEMENT_ASIDE = false;
+
+    const CATEGORY_ID_BY_LABEL = {
+      'Tinaco': 'tinaco',
+      'Cisterna y bomba': 'cisterna-bomba',
+      'Enseres domésticos': 'enseres-domesticos',
+      'Sistema de captación pluvial': 'captacion-pluvial',
+      'Biodigestor y baño': 'biodigestor-bano',
+      'EcoDuchas Regaderas Electricas': 'ecoduchas-regaderas-electricas',
+      'Pintura': 'pintura',
+      'Tanque de Gas': 'tanque-gas'
+    };
+
+    function slugifyCatalogValue(value) {
+      return String(value || '')
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLocaleLowerCase('es-MX')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+    }
+
+    const WATER_CATEGORY_IMAGES = {
+      'biodigestor-bano': 'img/Articulos/biodigestor-01.png',
+      'cisterna-bomba': 'img/Articulos/cisterna.png',
+      'ecoduchas-regaderas-electricas': 'img/cadenas-icon/banner-agua-8.jpg',
+      'enseres-domesticos': 'img/Articulos/bebederos.png',
+      'captacion-pluvial': 'img/Articulos/tanques-de-almacenamiento.png',
+      tinaco: 'img/Articulos/tinaco.png'
+    };
+
+    const HOUSING_CATEGORY_IMAGES = {
+      pintura: 'img/Articulos/impermeabilizante.png',
+      'enseres-domesticos': 'img/Articulos/licuadora.png',
+      'tanque-gas': 'img/Articulos/estufa.png'
+    };
+
+    const WATER_CATALOG_ROWS = [
+      {"name":"TINACO PLUS 2500 L","categoryLabel":"Tinaco","subcategoryLabel":"Tinaco tricapa"},
+      {"name":"TINACO PLUS 1100 L","categoryLabel":"Tinaco","subcategoryLabel":"Tinaco tricapa"},
+      {"name":"TINACO PLUS 800 L","categoryLabel":"Tinaco","subcategoryLabel":"Tinaco tricapa"},
+      {"name":"TINACO PLUS 450 L","categoryLabel":"Tinaco","subcategoryLabel":"Tinaco tricapa"},
+      {"name":"TAMBOPLAS 250 Lts.","categoryLabel":"Tinaco","subcategoryLabel":"Tamboplas"},
+      {"name":"CISTERNA 10,000 L NM S/EQUIPO","categoryLabel":"Cisterna y bomba","subcategoryLabel":"Cisterna"},
+      {"name":"CISTERNA 5,000 L NM S/EQUIPO","categoryLabel":"Cisterna y bomba","subcategoryLabel":"Cisterna"},
+      {"name":"CISTERNA 2,800 L NM SIN EQUIPO","categoryLabel":"Cisterna y bomba","subcategoryLabel":"Cisterna"},
+      {"name":"CISTERNA 1,200 L NM SIN BOMBA","categoryLabel":"Cisterna y bomba","subcategoryLabel":"Cisterna"},
+      {"name":"BOMBA PERIFÉRICA DE 1/2 HP","categoryLabel":"Cisterna y bomba","subcategoryLabel":"Bomba"},
+      {"name":"BOMBA PERIFÉRICA DE 3/4 HP","categoryLabel":"Cisterna y bomba","subcategoryLabel":"Bomba"},
+      {"name":"BOMBA CENTRÍFUGA DE 1/2 HP","categoryLabel":"Cisterna y bomba","subcategoryLabel":"Bomba"},
+      {"name":"BOMBA CENTRÍFUGA DE 3/4 HP","categoryLabel":"Cisterna y bomba","subcategoryLabel":"Bomba"},
+      {"name":"BOMBA CENTRÍFUGA DE 1 HP","categoryLabel":"Cisterna y bomba","subcategoryLabel":"Bomba"},
+      {"name":"BOMBA SUMERGIBLE DE 1/2 HP","categoryLabel":"Cisterna y bomba","subcategoryLabel":"Bomba"},
+      {"name":"PURIFICADOR BAJO TARJA","categoryLabel":"Enseres domésticos","subcategoryLabel":"Purificador"},
+      {"name":"FILTRO ESTANDAR","categoryLabel":"Enseres domésticos","subcategoryLabel":"Filtro"},
+      {"name":"FILTRO JUMBO","categoryLabel":"Enseres domésticos","subcategoryLabel":"Filtro"},
+      {"name":"CARTUCHO DE REPUESTO FILTRO ESTANDAR","categoryLabel":"Enseres domésticos","subcategoryLabel":"Filtro"},
+      {"name":"CARTUCHO FILTRO JUMBO","categoryLabel":"Enseres domésticos","subcategoryLabel":"Filtro"},
+      {"name":"SISTEMA DE CAPTACIÓN PLUVIAL 10,000 LTS","categoryLabel":"Sistema de captación pluvial","subcategoryLabel":"Sistema de captación pluvial"},
+      {"name":"BIODIGESTOR AUTOLIMPIABLE 14,000 LTS.","categoryLabel":"Biodigestor y baño","subcategoryLabel":"Biodigestor"},
+      {"name":"CARTUCHO DE REPUESTO PURIFICADOR","categoryLabel":"Enseres domésticos","subcategoryLabel":"Purificador"},
+      {"name":"PURIFICADOR SOBRE TARJA","categoryLabel":"Enseres domésticos","subcategoryLabel":"Purificador"},
+      {"name":"Purificador de Ósmosis Inversa POI-02","categoryLabel":"Enseres domésticos","subcategoryLabel":"Purificador"},
+      {"name":"TINACO 1100 L MT CLASICO","categoryLabel":"Tinaco","subcategoryLabel":"Tinaco tricapa"},
+      {"name":"TINACO 800 L MT CLASICO","categoryLabel":"Tinaco","subcategoryLabel":"Tinaco tricapa"},
+      {"name":"TINACO 450 L MT CLASICO","categoryLabel":"Tinaco","subcategoryLabel":"Tinaco tricapa"},
+      {"name":"FILTRO LAVABLE AUTOCLIN","categoryLabel":"Enseres domésticos","subcategoryLabel":"Filtro"},
+      {"name":"BRAZO PARA REGADERA ELECTRICA","categoryLabel":"EcoDuchas Regaderas Electricas","subcategoryLabel":"EcoDuchas Regaderas Electricas"},
+      {"name":"ECODUCHA, REGADERA ELECTRICA-3 TEMPERATURAS 5000 W","categoryLabel":"EcoDuchas Regaderas Electricas","subcategoryLabel":"EcoDuchas Regaderas Electricas"},
+      {"name":"ECODUCHA, REGADERA ELECTRICA, 4 TEMPERATURAS 5000 W","categoryLabel":"Biodigestor y baño","subcategoryLabel":"EcoDuchas Regaderas Electricas"},
+      {"name":"BRAZO PLUS PARA ECODUCHA, REGADERA ELECTRICA 30 M","categoryLabel":"EcoDuchas Regaderas Electricas","subcategoryLabel":"EcoDuchas Regaderas Electricas"},
+      {"name":"BOMBA PRESURIZADORA 1/2 HP 110 V","categoryLabel":"Cisterna y bomba","subcategoryLabel":"Bomba"},
+      {"name":"BOMBA PRESURIZADORA 1/4 HP 110 V","categoryLabel":"Cisterna y bomba","subcategoryLabel":"Bomba"},
+      {"name":"BOMBA PRESURIZADORA 1/3 HP 110 V","categoryLabel":"Cisterna y bomba","subcategoryLabel":"Bomba"},
+      {"name":"BOMBA SUMERGIBLE POZO PROFUNDO 1/2 HP","categoryLabel":"Cisterna y bomba","subcategoryLabel":"Bomba"},
+      {"name":"BOMBA SUMERGIBLE POZO PROFUNDO 2 HP","categoryLabel":"Cisterna y bomba","subcategoryLabel":"Bomba"},
+      {"name":"BOMBA SUMERGIBLE POZO PROFUNDO 3 HP","categoryLabel":"Cisterna y bomba","subcategoryLabel":"Bomba"},
+      {"name":"BOMBA SUMERGIBLE CISTERNA 1/2 HP","categoryLabel":"Cisterna y bomba","subcategoryLabel":"Bomba"},
+      {"name":"BOMBA SUMERGIBLE CISTERNA 1 HP","categoryLabel":"Cisterna y bomba","subcategoryLabel":"Bomba"},
+      {"name":"TINACO VERTICAL 500 L + BOMBA INTELIGENTE 1/2 HP","categoryLabel":"Tinaco","subcategoryLabel":"KIT Inteligente"},
+      {"name":"BOMBA INTELIGENTE 1/2 HP","categoryLabel":"Tinaco","subcategoryLabel":"Presurizador Inteligente"},
+      {"name":"SISTEMA DE CAPTACIÓN PLUVIAL 2,800 LTS","categoryLabel":"Sistema de captación pluvial","subcategoryLabel":"Sistema de captación pluvial"},
+      {"name":"SISTEMA DE CAPTACIÓN PLUVIAL 5,000 LTS","categoryLabel":"Sistema de captación pluvial","subcategoryLabel":"Sistema de captación pluvial"},
+      {"name":"BOMBA SUMERGIBLE DE 1 HP","categoryLabel":"Cisterna y bomba","subcategoryLabel":"Bomba"}
+    ];
+
+    const HOUSING_CATALOG_ROWS = [
+      {"name":"KMT MARIANA TRINITARIA BLANCO MATE","categoryLabel":"Pintura","subcategoryLabel":"Pintura Vinil"},
+      {"name":"KMT MARIANA TRINITARIA BLANCO SATIN","categoryLabel":"Pintura","subcategoryLabel":"Pintura Vinil"},
+      {"name":"KMT MARIANA TRINITARIA DEEP MATE 5G","categoryLabel":"Pintura","subcategoryLabel":"Pintura Vinil"},
+      {"name":"KMT MARIANA TRINITARIA DEEP SATIN","categoryLabel":"Pintura","subcategoryLabel":"Pintura Vinil"},
+      {"name":"KMT MARIANA TRINITARIA PASTEL MATE","categoryLabel":"Pintura","subcategoryLabel":"Pintura Vinil"},
+      {"name":"KMT MARIANA TRINITARIA PASTEL SATIN","categoryLabel":"Pintura","subcategoryLabel":"Pintura Vinil"},
+      {"name":"KMT MARIANA TRINITARIA ULTRADEEP MATE","categoryLabel":"Pintura","subcategoryLabel":"Pintura Vinil"},
+      {"name":"KMT MARIANA TRINITARIA ULTRADEEP SATIN","categoryLabel":"Pintura","subcategoryLabel":"Pintura Vinil"},
+      {"name":"SKMT ULTRADEEP AUTOLAVABLE EXT 5G","categoryLabel":"Pintura","subcategoryLabel":"Pintura acrílica"},
+      {"name":"PROFESSIONAL MARIANA TRINITARIA BLANCO","categoryLabel":"Pintura","subcategoryLabel":"Pintura Vinil"},
+      {"name":"IMPER MARIANA TRINITARIA TERRACOTA","categoryLabel":"Pintura","subcategoryLabel":"Impermeabilizante"},
+      {"name":"IMPER MARIANA TRINITARIA BLANCO","categoryLabel":"Pintura","subcategoryLabel":"Impermeabilizante"},
+      {"name":"SELLADOR TRA 6X1 MARIANA TRINITARIA","categoryLabel":"Pintura","subcategoryLabel":"Sellador"},
+      {"name":"ESMALTE SECADO RAPIDO BLANCO 5G","categoryLabel":"Pintura","subcategoryLabel":"Esmalte"},
+      {"name":"ESMALTE SECADO RAPIDO NEUTRAL 5G","categoryLabel":"Pintura","subcategoryLabel":"Esmalte"},
+      {"name":"ESMALTE ALQUIDALICO BLANCO 5G","categoryLabel":"Pintura","subcategoryLabel":"Esmalte"},
+      {"name":"ESMALTE ALQUIDALICO NEGRO 5G","categoryLabel":"Pintura","subcategoryLabel":"Esmalte"},
+      {"name":"PINTURA TRAFICO AMARILLA MARIANA T. BA","categoryLabel":"Pintura","subcategoryLabel":"Pintura tráfico"},
+      {"name":"PINTURA TRAFICO BLANCO MARIANA T. BA","categoryLabel":"Pintura","subcategoryLabel":"Pintura tráfico"},
+      {"name":"REDUCTOR 73","categoryLabel":"Pintura","subcategoryLabel":"Reductor"},
+      {"name":"THINNER W","categoryLabel":"Pintura","subcategoryLabel":"Disolventes"},
+      {"name":"SKMT EXTRAWHITE AUTOLAVABLE EXT 5G","categoryLabel":"Pintura","subcategoryLabel":"Pintura acrílica"},
+      {"name":"SKMT BLANCO AUTOLAVABLE EXT 5G","categoryLabel":"Pintura","subcategoryLabel":"Pintura acrílica"},
+      {"name":"LICUADORA SUPER CHEF","categoryLabel":"Enseres domésticos","subcategoryLabel":"Licuadoras"},
+      {"name":"LAVADORAS DOBLE TINA KOBLENZ 15 KG","categoryLabel":"Enseres domésticos","subcategoryLabel":"Lavadoras"},
+      {"name":"LAVADORAS DOBLE TINA KOBLENZ 19 KG","categoryLabel":"Enseres domésticos","subcategoryLabel":"Lavadoras"},
+      {"name":"LAVADORAS DOBLE TINA KOBLENZ 22 KG","categoryLabel":"Enseres domésticos","subcategoryLabel":"Lavadoras"},
+      {"name":"LAVADORAS DOBLE TINA KOBLENZ 13 KG.","categoryLabel":"Enseres domésticos","subcategoryLabel":"Lavadoras"},
+      {"name":"ESTUFAS COPETE","categoryLabel":"Enseres domésticos","subcategoryLabel":"Estufas"},
+      {"name":"PLANCHA PKK-340 L","categoryLabel":"Enseres domésticos","subcategoryLabel":"Planchas"},
+      {"name":"PLANCHA PKK-350 R","categoryLabel":"Enseres domésticos","subcategoryLabel":"Planchas"},
+      {"name":"PLANCHAS PKK-380 SA","categoryLabel":"Enseres domésticos","subcategoryLabel":"Planchas"},
+      {"name":"PLANCHA PKK-550 SR","categoryLabel":"Enseres domésticos","subcategoryLabel":"Planchas"},
+      {"name":"PLANCHA PKK-750 SA","categoryLabel":"Enseres domésticos","subcategoryLabel":"Planchas"},
+      {"name":"LICUADORA LKM-5910 VB","categoryLabel":"Enseres domésticos","subcategoryLabel":"Licuadoras"},
+      {"name":"LICUADORA LKM-5970 VR","categoryLabel":"Enseres domésticos","subcategoryLabel":"Licuadoras"},
+      {"name":"PARRILLA DE SOBREPONER LUCERO","categoryLabel":"Enseres domésticos","subcategoryLabel":"Estufas"},
+      {"name":"PARRILLAS DE SOBREPONER VICTORIA","categoryLabel":"Enseres domésticos","subcategoryLabel":"Estufas"},
+      {"name":"LAVADORA IRIS","categoryLabel":"Enseres domésticos","subcategoryLabel":"Lavadoras"},
+      {"name":"LAVADORA ZORAYA 23 Kg","categoryLabel":"Enseres domésticos","subcategoryLabel":"Lavadoras"},
+      {"name":"LAVADORA COMPACTA","categoryLabel":"Enseres domésticos","subcategoryLabel":"Lavadoras"},
+      {"name":"SECADOR CENTRÍFUGO","categoryLabel":"Enseres domésticos","subcategoryLabel":"Lavadoras"},
+      {"name":"METALEX EW BRILLANTE 5G","categoryLabel":"Pintura","subcategoryLabel":"Esmalte"},
+      {"name":"METALEX UD BRILLANTE 5G","categoryLabel":"Pintura","subcategoryLabel":"Esmalte"},
+      {"name":"METALEX DEEP BRILLANTE 5G","categoryLabel":"Pintura","subcategoryLabel":"Esmalte"},
+      {"name":"THINNER W TAMBO","categoryLabel":"Pintura","subcategoryLabel":"Disolventes"},
+      {"name":"MANERAL PARA MINI RODILLO SW 4\"","categoryLabel":"Pintura","subcategoryLabel":"Accesorios"},
+      {"name":"RODILLO PROFESIONAL 4\"","categoryLabel":"Pintura","subcategoryLabel":"Accesorios"},
+      {"name":"BROCHA 4\" SW-DORADA","categoryLabel":"Pintura","subcategoryLabel":"Accesorios"},
+      {"name":"BROCHA 2\" SW-DORADA","categoryLabel":"Pintura","subcategoryLabel":"Accesorios"},
+      {"name":"RODILLO SW PROFESIONAL 3/4\"","categoryLabel":"Pintura","subcategoryLabel":"Accesorios"},
+      {"name":"FELPA SW RUGOSO 3/4\"","categoryLabel":"Pintura","subcategoryLabel":"Accesorios"},
+      {"name":"BROCHA 6\" SW-DORADA","categoryLabel":"Pintura","subcategoryLabel":"Accesorios"},
+      {"name":"P.A.B EXTRA WHITE","categoryLabel":"Pintura","subcategoryLabel":"Esmalte"},
+      {"name":"P.A.B DEEP","categoryLabel":"Pintura","subcategoryLabel":"Esmalte"},
+      {"name":"P.A.B ULTRADEEP","categoryLabel":"Pintura","subcategoryLabel":"Esmalte"},
+      {"name":"P.A.B BLANCO MATE","categoryLabel":"Pintura","subcategoryLabel":"Esmalte"},
+      {"name":"P.A.B NEGRO MATE","categoryLabel":"Pintura","subcategoryLabel":"Esmalte"},
+      {"name":"P.A.B. EXTRA WHITE MATE","categoryLabel":"Pintura","subcategoryLabel":"Esmalte"},
+      {"name":"P.A.B. ULTRA DEEP MATE","categoryLabel":"Pintura","subcategoryLabel":"Esmalte"},
+      {"name":"EVOLUCION EXTRA WHITE","categoryLabel":"Pintura","subcategoryLabel":"Pintura Vinil"},
+      {"name":"EVOLUCION EXTRA CUBRIMIENTO BLANCO MATE","categoryLabel":"Pintura","subcategoryLabel":"Pintura Vinil"},
+      {"name":"EVOLUCION DEEP","categoryLabel":"Pintura","subcategoryLabel":"Pintura Vinil"},
+      {"name":"EVOLUCION EXTRA-RENDIMIENTO ULTRADEEP","categoryLabel":"Pintura","subcategoryLabel":"Pintura Vinil"},
+      {"name":"PLANCHA DE VAPOR 1800 W PKK-850 SAR","categoryLabel":"Enseres domésticos","subcategoryLabel":"Planchas"},
+      {"name":"TETERA ELECTRICA","categoryLabel":"Enseres domésticos","subcategoryLabel":"Tetera"},
+      {"name":"LIICUADORA Modelo: LKM-3910 PN","categoryLabel":"Enseres domésticos","subcategoryLabel":"Licuadoras"},
+      {"name":"LICUADORA Modelo: LKM-5980 VN","categoryLabel":"Enseres domésticos","subcategoryLabel":"Licuadoras"},
+      {"name":"PARRILLA ELECTRICA 1 QUEMADOR ESPIRAL","categoryLabel":"Enseres domésticos","subcategoryLabel":"Estufas"},
+      {"name":"PARRILLA ELECTRICA 2 QUEMADORES ESPIRAL","categoryLabel":"Enseres domésticos","subcategoryLabel":"Estufas"},
+      {"name":"PARRILLA ELECTRICA 1 QUEMADOR DISCO","categoryLabel":"Enseres domésticos","subcategoryLabel":"Estufas"},
+      {"name":"PARRILLA ELECTRICA 2 QUEMADORES DISCO","categoryLabel":"Enseres domésticos","subcategoryLabel":"Estufas"},
+      {"name":"LAVADORA NADIA 23 KGS","categoryLabel":"Enseres domésticos","subcategoryLabel":"Lavadoras"},
+      {"name":"CILINDRO PORTATIL 9.5 KG ROSCA SENCILLA","categoryLabel":"Tanque de Gas","subcategoryLabel":"Cilindro"},
+      {"name":"CILINDRO PORTATIL 9.5 KG DOBLE ROSCA","categoryLabel":"Tanque de Gas","subcategoryLabel":"Cilindro"},
+      {"name":"CILINDRO TRANSPORTABLE 20 KG ROSCA SENCILLA","categoryLabel":"Tanque de Gas","subcategoryLabel":"Cilindro"},
+      {"name":"CILINDRO TRANSPORTABLE 30 KG ROSCA SENCILLA","categoryLabel":"Tanque de Gas","subcategoryLabel":"Cilindro"},
+      {"name":"TANQUE ESTACIONARIO VERTICAL 120 LTS","categoryLabel":"Tanque de Gas","subcategoryLabel":"Estacionario"},
+      {"name":"TANQUE ESTACIONARIO HORIZONTAL 120 LTS","categoryLabel":"Tanque de Gas","subcategoryLabel":"Estacionario"},
+      {"name":"TANQUE ESTACIONARIO VERTICAL 180 LTS","categoryLabel":"Tanque de Gas","subcategoryLabel":"Estacionario"},
+      {"name":"TANQUE ESTACIONARIO HORIZONTAL 180 LTS","categoryLabel":"Tanque de Gas","subcategoryLabel":"Estacionario"},
+      {"name":"TANQUE ESTACIONARIO 300 LTS","categoryLabel":"Tanque de Gas","subcategoryLabel":"Estacionario"},
+      {"name":"TANQUE ESTACIONARIO 500 LTS","categoryLabel":"Tanque de Gas","subcategoryLabel":"Estacionario"},
+      {"name":"TANQUE ESTACIONARIO 1000 LTS","categoryLabel":"Tanque de Gas","subcategoryLabel":"Estacionario"},
+      {"name":"TANQUE ESTACIONARIO 1600 LTS","categoryLabel":"Tanque de Gas","subcategoryLabel":"Estacionario"},
+      {"name":"TANQUE ESTACIONARIO 2200 LTS","categoryLabel":"Tanque de Gas","subcategoryLabel":"Estacionario"},
+      {"name":"TANQUE ESTACIONARIO 2800 LTS","categoryLabel":"Tanque de Gas","subcategoryLabel":"Estacionario"},
+      {"name":"TANQUE ESTACIONARIO 3400 LTS","categoryLabel":"Tanque de Gas","subcategoryLabel":"Estacionario"},
+      {"name":"TANQUE ESTACIONARIO 5000 LTS","categoryLabel":"Tanque de Gas","subcategoryLabel":"Estacionario"},
+      {"name":"TANQUE ESTACIONARIO 120H METALIZADO","categoryLabel":"Tanque de Gas","subcategoryLabel":"Estacionario"},
+      {"name":"TANQUE ESTACIONARIO 180H METALIZADO","categoryLabel":"Tanque de Gas","subcategoryLabel":"Estacionario"},
+      {"name":"TANQUE ESTACIONARIO 300 METALIZADO","categoryLabel":"Tanque de Gas","subcategoryLabel":"Estacionario"},
+      {"name":"TANQUE ESTACIONARIO 500 METALIZADO","categoryLabel":"Tanque de Gas","subcategoryLabel":"Estacionario"},
+      {"name":"TANQUE ESTACIONARIO 1000 METALIZADO","categoryLabel":"Tanque de Gas","subcategoryLabel":"Estacionario"},
+      {"name":"TANQUE PARA CARBURACION 38 VAL/CAB DOT","categoryLabel":"Tanque de Gas","subcategoryLabel":"Carburación"},
+      {"name":"TANQUE PARA CARBURACION 38 Val/Cab NOM009","categoryLabel":"Tanque de Gas","subcategoryLabel":"Carburación"},
+      {"name":"TANQUE PARA CARBURACION 50","categoryLabel":"Tanque de Gas","subcategoryLabel":"Carburación"},
+      {"name":"TANQUE PARA CARBURACION 50 Con patas","categoryLabel":"Tanque de Gas","subcategoryLabel":"Carburación"},
+      {"name":"TANQUE PARA CARBURACION 60","categoryLabel":"Tanque de Gas","subcategoryLabel":"Carburación"},
+      {"name":"TANQUE PARA CARBURACION 75 Val/Cab","categoryLabel":"Tanque de Gas","subcategoryLabel":"Carburación"},
+      {"name":"TANQUE PARA CARBURACION 77","categoryLabel":"Tanque de Gas","subcategoryLabel":"Carburación"},
+      {"name":"TANQUE PARA CARBURACION 85 Val/Cab","categoryLabel":"Tanque de Gas","subcategoryLabel":"Carburación"},
+      {"name":"TANQUE PARA CARBURACION 87 Con patas","categoryLabel":"Tanque de Gas","subcategoryLabel":"Carburación"},
+      {"name":"TANQUE PARA CARBURACION 90","categoryLabel":"Tanque de Gas","subcategoryLabel":"Carburación"},
+      {"name":"TANQUE PARA CARBURACION 100","categoryLabel":"Tanque de Gas","subcategoryLabel":"Carburación"},
+      {"name":"TANQUE PARA CARBURACION 100 Con patas","categoryLabel":"Tanque de Gas","subcategoryLabel":"Carburación"},
+      {"name":"TANQUE PARA CARBURACION 100 Val/Cab","categoryLabel":"Tanque de Gas","subcategoryLabel":"Carburación"},
+      {"name":"TANQUE PARA CARBURACION 105","categoryLabel":"Tanque de Gas","subcategoryLabel":"Carburación"},
+      {"name":"TANQUE PARA CARBURACION 105 Val/Cab","categoryLabel":"Tanque de Gas","subcategoryLabel":"Carburación"},
+      {"name":"TANQUE PARA CARBURACION 120","categoryLabel":"Tanque de Gas","subcategoryLabel":"Carburación"},
+      {"name":"TANQUE PARA CARBURACION 120 Con patas","categoryLabel":"Tanque de Gas","subcategoryLabel":"Carburación"},
+      {"name":"TANQUE PARA CARBURACION 123","categoryLabel":"Tanque de Gas","subcategoryLabel":"Carburación"},
+      {"name":"TANQUE PARA CARBURACION 144","categoryLabel":"Tanque de Gas","subcategoryLabel":"Carburación"},
+      {"name":"TANQUE PARA CARBURACION 149","categoryLabel":"Tanque de Gas","subcategoryLabel":"Carburación"},
+      {"name":"TANQUE PARA CARBURACION 190","categoryLabel":"Tanque de Gas","subcategoryLabel":"Carburación"},
+      {"name":"TANQUE PARA CARBURACION 190 Con patas","categoryLabel":"Tanque de Gas","subcategoryLabel":"Carburación"},
+      {"name":"TANQUE PARACARBURACION 220","categoryLabel":"Tanque de Gas","subcategoryLabel":"Carburación"},
+      {"name":"TANQUE PARA CARBURACION 276","categoryLabel":"Tanque de Gas","subcategoryLabel":"Carburación"},
+      {"name":"ESTUFA GAS 50 CM MABE NEG","categoryLabel":"Enseres domésticos","subcategoryLabel":"Estufas"},
+      {"name":"REFRIGERADOR AUTOMÁTICO 251.19 L INOXIDABLE MATE","categoryLabel":"Enseres domésticos","subcategoryLabel":"Refrigerador"},
+      {"name":"REFRIGERADOR TMNF 302 L MABE SIL","categoryLabel":"Enseres domésticos","subcategoryLabel":"Refrigerador"},
+      {"name":"REFRIGERADOR AUTOMÁTICO 360L INOXIDABLE MATE","categoryLabel":"Enseres domésticos","subcategoryLabel":"Refrigerador"},
+      {"name":"REFRIGERADOR AUTOMÁTICO 400 L ACERO INOXIDABLE","categoryLabel":"Enseres domésticos","subcategoryLabel":"Refrigerador"},
+      {"name":"LAVADORA AUTOMÁTICA 16 KG BLANCO","categoryLabel":"Enseres domésticos","subcategoryLabel":"Lavadoras"},
+      {"name":"LAVADORA 2 TINAS 13 KG MABE BLA","categoryLabel":"Enseres domésticos","subcategoryLabel":"Lavadoras"},
+      {"name":"LAVADORA 2 TINAS 16 KG MABE BLA","categoryLabel":"Enseres domésticos","subcategoryLabel":"Lavadoras"},
+      {"name":"P.A.B. DEEP MATE","categoryLabel":"Pintura","subcategoryLabel":"Esmalte"}
+    ];
+
+    function createCatalogItems(prefix, rows) {
+      return rows.map((row, index) => {
+        const categoryId = CATEGORY_ID_BY_LABEL[row.categoryLabel];
+        if (!categoryId) throw new Error('Categoría no reconocida: ' + row.categoryLabel);
+        return {
+          id: prefix + '-' + (index + 1),
+          name: row.name,
+          categoryId,
+          categoryLabel: row.categoryLabel,
+          subcategoryId: categoryId + '--' + slugifyCatalogValue(row.subcategoryLabel),
+          subcategoryLabel: row.subcategoryLabel
+        };
+      });
+    }
+
+    const WATER_SUBCATEGORY_ITEMS = createCatalogItems('agua', WATER_CATALOG_ROWS);
+    const HOUSING_SUBCATEGORY_ITEMS = createCatalogItems('vivienda', HOUSING_CATALOG_ROWS);
+
+    const WATER_CATEGORIES = [
+      { id: 'biodigestor-bano', label: 'Biodigestor y baño', image: WATER_CATEGORY_IMAGES['biodigestor-bano'], x: 23.4, y: 69.5, w: 8, h: 10 },
+      { id: 'cisterna-bomba', label: 'Cisterna y bomba', image: WATER_CATEGORY_IMAGES['cisterna-bomba'], x: 15.5, y: 63.5, w: 14, h: 18 },
+      { id: 'ecoduchas-regaderas-electricas', label: 'EcoDuchas Regaderas Eléctricas', image: WATER_CATEGORY_IMAGES['ecoduchas-regaderas-electricas'], x: 61.2, y: 39, w: 9, h: 10 },
+      { id: 'enseres-domesticos', label: 'Enseres domésticos', image: WATER_CATEGORY_IMAGES['enseres-domesticos'], x: 43.7, y: 58.2, w: 10, h: 14 },
+      { id: 'captacion-pluvial', label: 'Sistema de captación pluvial', image: WATER_CATEGORY_IMAGES['captacion-pluvial'], x: 43.6, y: 18.2, w: 9, h: 10 },
+      { id: 'tinaco', label: 'Tinaco', image: WATER_CATEGORY_IMAGES.tinaco, x: 29.4, y: 19.4, w: 8, h: 12 }
+    ];
+
+    const HOUSING_CATEGORIES = [
+      { id: 'pintura', label: 'Pintura', image: HOUSING_CATEGORY_IMAGES.pintura, x: 20, y: 34, w: 10, h: 13 },
+      { id: 'enseres-domesticos', label: 'Enseres domésticos', image: HOUSING_CATEGORY_IMAGES['enseres-domesticos'], x: 48, y: 55, w: 11, h: 14 },
+      { id: 'tanque-gas', label: 'Tanque de Gas', image: HOUSING_CATEGORY_IMAGES['tanque-gas'], x: 76, y: 60, w: 10, h: 13 }
+    ];
+
+    function createCategorySubcategories(categories, items) {
+      return Object.fromEntries(categories.map(category => {
+        const groups = [];
+        items
+          .filter(item => item.categoryId === category.id)
+          .forEach(item => {
+            let group = groups.find(entry => entry.id === item.subcategoryId);
+            if (!group) {
+              group = { id: item.subcategoryId, label: item.subcategoryLabel, productIds: [] };
+              groups.push(group);
+            }
+            group.productIds.push(item.id);
+          });
+        return [category.id, groups];
+      }));
+    }
+
+    function createCatalogProducts(items, categoryImages) {
+      return items.map(item => ({
+        id: item.id,
+        name: item.name,
+        short: '',
+        categoryId: item.categoryId,
+        categoryLabel: item.categoryLabel,
+        subcategoryId: item.subcategoryId,
+        subcategoryLabel: item.subcategoryLabel,
+        description: 'Categoría: ' + item.categoryLabel + '. Subcategoría: ' + item.subcategoryLabel + '.',
+        image: categoryImages[item.categoryId],
+        variants: [
+          {
+            id: item.id + '-tipo',
+            name: item.name,
+            description: 'Categoría: ' + item.categoryLabel + '. Subcategoría: ' + item.subcategoryLabel + '.'
+          }
+        ]
+      }));
+    }
+
+    const WATER_CATEGORY_SUBCATEGORIES = createCategorySubcategories(WATER_CATEGORIES, WATER_SUBCATEGORY_ITEMS);
+    const HOUSING_CATEGORY_SUBCATEGORIES = createCategorySubcategories(HOUSING_CATEGORIES, HOUSING_SUBCATEGORY_ITEMS);
+    const WATER_SUBCATEGORY_PRODUCTS = createCatalogProducts(WATER_SUBCATEGORY_ITEMS, WATER_CATEGORY_IMAGES);
+    const HOUSING_SUBCATEGORY_PRODUCTS = createCatalogProducts(HOUSING_SUBCATEGORY_ITEMS, HOUSING_CATEGORY_IMAGES);
+
+    const waterChain = DATA.find(chain => chain.id === 'agua');
+    if (waterChain) {
+      waterChain.products = WATER_SUBCATEGORY_PRODUCTS;
+    }
+
+    const WATER_CATALOG = [
+      {
+        id: 'agua-catalogo',
+        name: 'Categorías de agua',
+        short: '',
+        image: 'img/cadenas-icon/banner-agua-8.jpg',
+        productIds: WATER_SUBCATEGORY_ITEMS.map(item => item.id)
+      }
+    ];
+    const housingChain = DATA.find(chain => chain.id === 'vivienda');
+    if (housingChain) {
+      housingChain.products = HOUSING_SUBCATEGORY_PRODUCTS;
+    }
+
+    const HOUSING_CATALOG = [
+      {
+        id: 'vivienda-catalogo',
+        name: 'Categorías de vivienda',
+        short: '',
+        image: 'img/cadenas-icon/banner-vivienda-3.jpg',
+        productIds: HOUSING_SUBCATEGORY_ITEMS.map(item => item.id)
+      }
+    ];
+
+    const CATALOGS_BY_CHAIN = {
+      agua: {
+        categories: WATER_CATEGORIES,
+        categorySubcategories: WATER_CATEGORY_SUBCATEGORIES,
+        catalog: WATER_CATALOG
+      },
+      vivienda: {
+        categories: HOUSING_CATEGORIES,
+        categorySubcategories: HOUSING_CATEGORY_SUBCATEGORIES,
+        catalog: HOUSING_CATALOG
+      }
+    };
+
+    const requestedChainId = new URLSearchParams(window.location.search).get('cadena');
+    let activeChainId = ENABLED_CHAIN_IDS.has(requestedChainId) ? requestedChainId : 'agua';
+    let activeBrandId = CATALOGS_BY_CHAIN[activeChainId].catalog[0].id;
+    let activeHotspotId = null;
+    let activeSubcategoryId = null;
+    let activeProductId = null;
+    let activeVariantId = null;
+    let currentStep = 1;
+
+    const menuPanel = document.getElementById('menuPanel');
+    const menuBackdrop = document.getElementById('menuBackdrop');
+    const menuToggle = document.getElementById('menuToggle');
+    const menuClose = document.getElementById('menuClose');
+    const selectionPanel = document.getElementById('selectionPanel');
+    const selectionToggle = document.getElementById('selectionToggle');
+    const selectionClose = document.getElementById('selectionClose');
+
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileStepBack = document.getElementById('mobileStepBack');
+    const mainMenu = document.getElementById('mainMenu');
+    const menuCartCount = document.getElementById('menuCartCount');
+    const chainsStrip = document.getElementById('chainsStrip');
+    const explorer = document.querySelector('.explorer');
+    const productsTitle = document.getElementById('productsTitle');
+    const productsSubtitle = document.getElementById('productsSubtitle');
+    const productsList = document.getElementById('productsList');
+    const hotspotCatalogList = document.getElementById('hotspotCatalogList');
+    const productClose = document.getElementById('productClose');
+    const typeClose = document.getElementById('typeClose');
+    const brandProductsTitle = document.getElementById('brandProductsTitle');
+    const brandProductsSubtitle = document.getElementById('brandProductsSubtitle');
+    const brandProductsList = document.getElementById('brandProductsList');
+    const typeProductsTitle = document.getElementById('typeProductsTitle');
+    const typeProductsSubtitle = document.getElementById('typeProductsSubtitle');
+    const typeProductsList = document.getElementById('typeProductsList');
+    const detailsContent = document.getElementById('detailsContent');
+    const hero = document.querySelector('.hero');
+    const heroIcon = document.getElementById('heroIcon');
+    const heroTitle = document.getElementById('heroTitle');
+    const heroTitleDetail = document.getElementById('heroTitleDetail');
+    const searchToggle = document.getElementById('searchToggle');
+    const searchPanel = document.getElementById('generalSearchPanel');
+    const searchClose = document.getElementById('searchClose');
+    const generalSearchInput = document.getElementById('generalSearchUi');
+    let activeDescriptionModal = null;
+    let activeDescriptionToggle = null;
+    let descriptionModalReturn = null;
+
+    function getActiveChain() {
+      return DATA.find(chain => chain.id === activeChainId) || DATA[0];
+    }
+    function getActiveCatalogConfig() {
+      return CATALOGS_BY_CHAIN[activeChainId] || CATALOGS_BY_CHAIN.agua;
+    }
+
+    function getVisibleBrands() {
+      return getActiveCatalogConfig().catalog;
+    }
+
+    function getActiveBrand() {
+      return getActiveCatalogConfig().catalog.find(brand => brand.id === activeBrandId) || null;
+    }
+
+    function getActiveSubcategories() {
+      if (!getActiveBrand()) return [];
+      return getActiveCatalogConfig().categorySubcategories[activeHotspotId] || [];
+    }
+
+    function getActiveSubcategory() {
+      return getActiveSubcategories().find(group => group.id === activeSubcategoryId) || null;
+    }
+
+    function getTypeProducts() {
+      const chain = getActiveChain();
+      const subcategory = getActiveSubcategory();
+      if (!subcategory) return [];
+      return subcategory.productIds
+        .map(productId => chain.products.find(product => product.id === productId))
+        .filter(Boolean);
+    }
+
+    function getActiveHotspot() {
+      return getActiveCatalogConfig().categories.find(hotspot => hotspot.id === activeHotspotId) || null;
+    }
+
+    function getActiveProduct() {
+      const chain = getActiveChain();
+      if (!activeProductId) return null;
+      return chain.products.find(product => product.id === activeProductId) || null;
+    }
+
+    function getActiveVariant() {
+      const product = getActiveProduct();
+      return product?.variants.find(item => item.id === activeVariantId) || null;
+    }
+
+    function isEnabledChain(chainId) {
+      return ENABLED_CHAIN_IDS.has(chainId);
+    }
+
+    function stripButtonTemplate(chain, isActive) {
+      return `
+        <button
+          class="${[
+            'chain-pill',
+            isActive ? 'is-active' : ''
+          ].filter(Boolean).join(' ')}"
+          data-chain-id="${chain.id}"
+        >
+          ${getChainDisplayName(chain)}
+        </button>
+      `;
+    }
+
+    function getChainDisplayName(chain) {
+      const labels = {
+        salud: 'Cadena 1. Salud',
+        alimentacion: 'Cadena 2. Alimentación',
+        vivienda: 'Cadena 3. Vivienda',
+        'medio-ambiente': 'Cadena 4. Medio ambiente',
+        energia: 'Cadena 5. Energía',
+        'arte-deporte-juventud': 'Cadena 6. Arte, deporte y juventud',
+        educacion: 'Cadena 7. Educación',
+        agua: 'Cadena 8. Agua',
+        'innovacion-gestion': 'Cadena 9. Innovación y gestión del conocimiento',
+        'seguridad-humana': 'Cadena 10. Seguridad humana',
+        'inclusion-productiva-financiera': 'Cadena 11. Inclusión productiva y financiera'
+      };
+      return labels[chain.id] || chain.name;
+    }
+
+// IMAGENES DE FONDO en los titulos
+    function getHeroBackground(chainId) {
+      const heroBackgrounds = {
+        agua: 'img/cadenas-icon/banner-agua-8.jpg',
+        vivienda: 'img/cadenas-icon/banner-vivienda-3.jpg'
+      };
+      return heroBackgrounds[chainId] || 'img/cadenas-icon/banner-fondo-cadenas.jpg';
+    }
+
+    function getHeroIconPath(chainId) {
+      const chainIcons = {
+        salud: 'img/cadenas-icon/1-cadenaSalud-1.png',
+        alimentacion: 'img/cadenas-icon/2-cadenaAlimentacion-2.png',
+        vivienda: 'img/cadenas-icon/3-cadenaVivienda-3.png',
+        'medio-ambiente': 'img/cadenas-icon/4-cadenaMedioAmbiente-4.png',
+        energia: 'img/cadenas-icon/5-cadenaEnergia-5.png',
+        'arte-deporte-juventud': 'img/cadenas-icon/6-cadenaArteCultura-6.png',
+        educacion: 'img/cadenas-icon/7-cadenaEducacion-7.png',
+        agua: 'img/cadenas-icon/8-cadenaAgua-8.png',
+        'innovacion-gestion': 'img/cadenas-icon/9-cadenaInnovacionGestion-9.png',
+        'seguridad-humana': 'img/cadenas-icon/10-cadenaSeguridadHumana-10.png',
+        'inclusion-productiva-financiera': 'img/cadenas-icon/11-cadenaInclusionProductiva-11.png'
+      };
+
+      return chainIcons[chainId] || chainIcons.agua;
+    }
+
+function getHeroCopy(chain) {
+  const heroContent = {
+    salud: {
+      eyebrow: 'Cadena 1 · Salud',
+      title: 'Cadena 1 · Salud: cuida tu bienestar con atención oportuna.',
+      description: 'Acerca apoyos y soluciones de salud para prevenir, atender y dar seguimiento a necesidades personales y comunitarias.'
+    },
+    alimentacion: {
+      eyebrow: 'Cadena 2 · Alimentación',
+      title: 'Cadena 2 · Alimentación: fortalece la nutrición de tu familia.',
+      description: 'Reúne apoyos para mejorar la alimentación con opciones prácticas que ayudan al bienestar diario de las familias.'
+    },
+    vivienda: {
+      eyebrow: 'Cadena 3 · Vivienda',
+      title: 'Cadena 3 · Vivienda: mejora tu hogar para vivir mejor.',
+      description: 'Impulsa acciones para acondicionar la vivienda con soluciones que brindan mayor seguridad, comodidad y calidad de vida.'
+    },
+    'medio-ambiente': {
+      eyebrow: 'Cadena 4 · Medio ambiente',
+      title: 'Cadena 4 · Medio ambiente: protege tu entorno con acciones concretas.',
+      description: 'Promueve iniciativas que ayudan a cuidar los recursos naturales y a generar comunidades más limpias y sostenibles.'
+    },
+    energia: {
+      eyebrow: 'Cadena 5 · Energía',
+      title: 'Cadena 5 · Energía: mejora el acceso a energía para tu comunidad.',
+      description: 'Integra soluciones que favorecen un mejor aprovechamiento de la energía en el hogar y en espacios comunitarios.'
+    },
+    'arte-deporte-juventud': {
+      eyebrow: 'Cadena 6 · Arte, deporte y juventud',
+      title: 'Cadena 6 · Arte, deporte y juventud: impulsa el talento y la participación.',
+      description: 'Acerca apoyos que fortalecen el desarrollo de niñas, niños y jóvenes mediante actividades culturales, recreativas y deportivas.'
+    },
+    educacion: {
+      eyebrow: 'Cadena 7 · Educación',
+      title: 'Cadena 7 · Educación: abre oportunidades a través del aprendizaje.',
+      description: 'Facilita recursos y apoyos que contribuyen a la permanencia escolar y al desarrollo educativo de la comunidad.'
+    },
+    agua: {
+      eyebrow: 'Cadena 8 · Agua',
+      title: 'Cadena 8 · Agua: mejora el acceso al agua en tu comunidad.',
+      description: 'Impulsa soluciones para captar, almacenar y aprovechar el agua de forma más segura y eficiente.'
+    },
+    'innovacion-gestion': {
+      eyebrow: 'Cadena 9 · Innovación y gestión del conocimiento',
+      title: 'Cadena 9 · Innovación y gestión: transforma ideas en soluciones útiles.',
+      description: 'Fortalece procesos, herramientas y capacidades para compartir conocimiento y mejorar la atención a las comunidades.'
+    },
+    'seguridad-humana': {
+      eyebrow: 'Cadena 10 · Seguridad humana',
+      title: 'Cadena 10 · Seguridad humana: protege a tu familia y tu comunidad.',
+      description: 'Promueve acciones de prevención y apoyo que ayudan a reducir riesgos y responder mejor ante situaciones vulnerables.'
+    },
+    'inclusion-productiva-financiera': {
+      eyebrow: 'Cadena 11 · Inclusión productiva y financiera',
+      title: 'Cadena 11 · Inclusión productiva y financiera: impulsa tus proyectos con más oportunidades.',
+      description: 'Acerca apoyos que fortalecen el emprendimiento, la productividad y el acceso a opciones para crecer con mayor estabilidad.'
+    }
+  };
+
+      const customCopy = heroContent[chain.id] || {};
+      return {
+        eyebrow: customCopy.eyebrow || `Cadena activa · ${chain.name}`,
+        title: customCopy.title || `${chain.name}: explora productos y detalles en un solo flujo.`,
+        description: customCopy.description || chain.description
+      };
+    }
+
+    function splitHeroTitle(title) {
+      const normalizedTitle = title || '';
+      const separatorIndex = normalizedTitle.indexOf(':');
+      if (separatorIndex < 0) {
+        return {
+          heading: normalizedTitle,
+          detail: ''
+        };
+      }
+
+      return {
+        heading: normalizedTitle.slice(0, separatorIndex + 1),
+        detail: normalizedTitle.slice(separatorIndex + 1).trim()
+      };
+    }
+
+    function productTemplate(brand, isActive) {
+      return `
+        <button
+          class="${isActive ? 'brand-card is-active' : 'brand-card'}"
+          data-brand-id="${brand.id}"
+          style="--brand-bg-image: url('${encodeURI(brand.image)}')"
+        >
+          <span class="brand-card__shade" aria-hidden="true"></span>
+          <div class="brand-card__content">
+            <span class="brand-card__eyebrow">Proveedor</span>
+            <span class="brand-card__title">${brand.name}</span>
+            ${brand.short ? `<span class="brand-card__desc">${brand.short}</span>` : ''}
+          </div>
+        </button>
+      `;
+    }
+
+    function hotspotCatalogCardTemplate(hotspot, chain) {
+      const config = getActiveCatalogConfig();
+      const product = chain.products.find(item => item.id === hotspot.id);
+      const image = hotspot.image || getProductImage(product, product?.variants[0]) || config.catalog[0].image;
+      const isEnabled = Boolean(config.categorySubcategories[hotspot.id]);
+
+      return `
+        <button
+          class="${[
+            'subcategory-card',
+            'category-card',
+            'product-card',
+            'hotspot-catalog-card',
+            isEnabled ? '' : 'is-disabled'
+          ].filter(Boolean).join(' ')}"
+          type="button"
+          ${isEnabled ? `data-hotspot-product="${hotspot.id}"` : 'disabled aria-disabled="true"'}
+        >
+          <span class="subcategory-card__eyebrow">Categoría</span>
+          <span class="subcategory-card__title">${hotspot.label}</span>
+          <span class="subcategory-card__media" aria-hidden="true">
+            <img src="${encodeURI(image)}" alt="" loading="lazy">
+          </span>
+          <span class="subcategory-card__action">
+            <span>Explorar</span>
+            <span class="subcategory-card__arrow" aria-hidden="true">→</span>
+          </span>
+        </button>
+      `;
+    }
+    function formatSubcategoryTitle(name) {
+      const value = String(name || '').trim();
+      const hasLetters = value.toLocaleLowerCase('es-MX') !== value.toLocaleUpperCase('es-MX');
+      const isAllUppercase = hasLetters && value === value.toLocaleUpperCase('es-MX');
+
+      if (!isAllUppercase) return value;
+
+      const sentenceCase = value
+        .toLocaleLowerCase('es-MX')
+        .replace(/^./u, character => character.toLocaleUpperCase('es-MX'));
+
+      return sentenceCase.replace(
+        /\b(l|lts|nm|hp|w|v|mt)\b/giu,
+        unit => unit.toLocaleUpperCase('es-MX')
+      );
+    }
+    function subcategoryGroupTemplate(group) {
+      const hotspot = getActiveHotspot();
+      const image = hotspot?.image || getActiveCatalogConfig().catalog[0].image;
+      return `
+        <button
+          class="subcategory-card product-card"
+          type="button"
+          data-subcategory-id="${group.id}"
+        >
+          <span class="subcategory-card__eyebrow">Subcategoría</span>
+          <span class="subcategory-card__title">${group.label}</span>
+          <span class="subcategory-card__media" aria-hidden="true">
+            <img src="${encodeURI(image)}" alt="" loading="lazy">
+          </span>
+          <span class="subcategory-card__action">
+            <span>Ver tipos (${group.productIds.length})</span>
+            <span class="subcategory-card__arrow" aria-hidden="true">&rarr;</span>
+          </span>
+        </button>
+      `;
+    }
+
+    function brandProductTemplate(product, isActive) {
+      const image = getProductImage(product, product.variants[0]) || 'img/cadena 5.jpg';
+      return `
+        <button
+          class="${isActive ? 'subcategory-card product-card is-active' : 'subcategory-card product-card'}"
+          type="button"
+          data-product-id="${product.id}"
+        >
+          <span class="subcategory-card__eyebrow">Tipo</span>
+          <span class="subcategory-card__title">${formatSubcategoryTitle(product.name)}</span>
+          <span class="subcategory-card__media" aria-hidden="true">
+            <img src="${encodeURI(image)}" alt="" loading="lazy">
+          </span>
+          <span class="subcategory-card__action">
+            <span>Ver detalle</span>
+            <span class="subcategory-card__arrow" aria-hidden="true">→</span>
+          </span>
+        </button>
+      `;
+    }
+    function getProductImage(product, variant) {
+      const photoMap = {
+        'panel-solar': 'img/Articulos/panel-solar.png',
+        'calentador-solar': 'img/Articulos/calentador.png',
+        'calentador-solar-presion': 'img/Articulos/calentador.png',
+        'calentador-presion': 'img/Articulos/calentador.png',
+        'calentador-gravedad': 'img/Articulos/calentador.png',
+        'calentador-gravedad-80': 'img/Articulos/calentador.png',
+        'calentador-gravedad-100': 'img/Articulos/calentador.png',
+        'calentador-gravedad-120': 'img/Articulos/calentador.png',
+        'calentador-gravedad-150': 'img/Articulos/calentador.png',
+        'calentador-gravedad-180': 'img/Articulos/calentador.png',
+        'calentador-gravedad-200': 'img/Articulos/calentador.png',
+        'calentador-gravedad-240': 'img/Articulos/calentador.png',
+        'calentador-gravedad-300': 'img/Articulos/calentador.png',
+        refacciones: 'img/Articulos/refacciones-calentador-solar.png',
+        bases: 'img/Articulos/base-calentador-solar.png',
+        cisterna: 'img/Articulos/cisterna.png',
+        bomba: 'img/Articulos/cisterna.png',
+        'panel-solar-550': 'img/Articulos/panel-solar.png',
+        'tinaco-tricapa': 'img/Articulos/tinaco.png',
+        'tinaco-plus-2500': 'img/Articulos/tinaco.png',
+        'tinaco-plus-1100': 'img/Articulos/tinaco.png',
+        'tinaco-plus-800': 'img/Articulos/tinaco.png',
+        'tinaco-plus-450': 'img/Articulos/tinaco.png',
+        'tinaco-mt-clasico-1100': 'img/Articulos/tinaco.png',
+        'tinaco-mt-clasico-800': 'img/Articulos/tinaco.png',
+        'tinaco-mt-clasico-450': 'img/Articulos/tinaco.png',
+        tamboplas: 'img/Articulos/tamboplas.png',
+        'tamboplas-250': 'img/Articulos/tamboplas.png',
+        'tinaco-vertical': 'img/Articulos/tinaco.png',
+        'tinaco-vertical-modelo': 'img/Articulos/tinaco.png',
+        'kit-inteligente': 'img/Articulos/tinaco.png',
+        'kit-inteligente-modelo': 'img/Articulos/tinaco.png',
+        'presurizador-inteligente': 'img/Articulos/tinaco.png',
+        'presurizador-inteligente-modelo': 'img/Articulos/tinaco.png',
+        refrigerador: 'img/Articulos/refrigerador.png',
+        'refri-210-grafito': 'img/Articulos/refrigerador.png',
+        lavadora: 'img/Articulos/lavadora.png',
+        'lavadora-hogar': 'img/Articulos/lavadora.png',
+        estufa: 'img/Articulos/estufa.png',
+        'estufa-hogar': 'img/Articulos/estufa.png',
+        licuadora: 'img/Articulos/licuadora.png',
+        'licuadora-hogar': 'img/Articulos/licuadora.png',
+        plancha: 'img/Articulos/plancha.png',
+        'plancha-hogar': 'img/Articulos/plancha.png',
+        'aire-acondicionado': 'img/Articulos/aireacondicionado.png',
+        'aire-acondicionado-hogar': 'img/Articulos/aireacondicionado.png',
+        microondas: 'img/Articulos/microondas.png',
+        'microondas-hogar': 'img/Articulos/microondas.png'
+      };
+
+      return photoMap[variant?.id] || photoMap[product?.id] || product?.image || null;
+    }
+
+    function getProductDescription(product, variant) {
+      const isCalentadorGravedad = variant?.id === 'calentador-gravedad' || variant?.name === 'Calentador solar a gravedad';
+      if (isCalentadorGravedad) {
+        return `PANEL SOLAR ECO POWER
+
+PANELES SOLARES Modelo: PSM-550N XT
+CARACTERÍSTICAS:
+• Color Negro/Plata
+• Tecnología monocristalina de alta eficiencia
+• Potencia máxima 550 Watts
+• Voltaje de operación 41.8 V
+• Corriente de operación 13.16 A
+• Marco de aluminio anodizado resistente a la corrosión
+• Cubierta de vidrio templado de alta transparencia
+• Resistencia a lluvia, polvo y exposición solar prolongada
+• Compatible con sistemas residenciales y comerciales
+• Garantía 10 años en defectos de fabricación
+
+Dimensiones con empaque:
+Alto 230 cm
+Ancho 115 cm
+Profundo 5 cm
+Peso 29.800 kg
+
+Dimensiones sin empaque:
+Alto 227.8 cm
+Ancho 113.4 cm
+Profundo 3.5 cm
+Peso 27.600 kg
+
+No. de Parte: 12-4550-08-1
+Código de Barras: 7504550081236`;
+      }
+      return variant?.description || product?.description || 'Selecciona un tipo para ver sus detalles completos.';
+    }
+
+    function detailsTemplate(chain, product, variant) {
+      if (!variant) {
+        return `
+          <div class="step3-empty" role="status" aria-live="polite">
+            <h3>Sin tipo seleccionado</h3>
+            <p>Selecciona un tipo en el Paso 3 para ver montos, condiciones y cantidad.</p>
+          </div>
+        `;
+      }
+
+      const activeName = variant.name;
+      const activeDescription = getProductDescription(product, variant);
+      const summaryDescription = variant.description || product.description || '';
+      const summaryDescriptionMarkup = `<p>${summaryDescription || 'Sistema de soluci\u00f3n disponible para la cadena seleccionada.'}</p>`;
+      const skuCode = 'SKU-' + String(variant.id || product.id).toUpperCase();
+      const photo = getProductImage(product, variant);
+      const photoContent = photo
+        ? `<img class="product-photo-3" src="${photo}" alt="${activeName}" />`
+        : '<div class="photo-placeholder-3">Imagen de la solución</div>';
+      const relatedCards = [...product.variants.filter(item => item.id !== variant.id), ...product.variants, ...product.variants, ...product.variants, ...product.variants]
+        .slice(0, 4)
+        .map(item => {
+          const relatedPhoto = getProductImage(product, item);
+          const relatedVisual = relatedPhoto
+            ? `<img src="${relatedPhoto}" alt="" aria-hidden="true" />`
+            : '<span class="related-card-3__placeholder" aria-hidden="true">Solución</span>';
+
+          return `
+            <a class="related-card-3" href="#" aria-label="Ver solución ${item.name}">
+              <span class="related-card-3__media">${relatedVisual}</span>
+              <span class="related-card-3__content">
+                <strong>${item.name}</strong>
+                <span>${item.description}</span>
+              </span>
+              <span class="related-card-3__action" aria-hidden="true">
+                <span>Ver detalle</span>
+                <span>→</span>
+              </span>
+            </a>
+          `;
+        })
+        .join('');
+      const hideStep4Commercials = document.body.classList.contains('no-step4-commercials');
+      const step4Commercials = hideStep4Commercials ? '' : `
+        <section class="metrics-3" aria-label="Montos de la solución">
+          <article class="metric-card-3">
+            <div class="metric-icon-3 is-pink" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+                <path d="M4 7h16v12H4V7ZM7 7V5h10v2M16 13h4M7 11h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <small>Monto normal</small>
+              <strong>$1,200.00</strong>
+            </div>
+          </article>
+          <article class="metric-card-3">
+            <div class="metric-icon-3 is-purple" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+                <path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7M2 7h20v5H2V7ZM12 7v14M12 7H7.5A2.5 2.5 0 1 1 10 4.5L12 7Zm0 0h4.5A2.5 2.5 0 1 0 14 4.5L12 7Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <small>Subsidio CMT</small>
+              <strong>$400.00</strong>
+            </div>
+          </article>
+          <article class="metric-card-3">
+            <div class="metric-icon-3 is-purple" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+                <path d="M4 20V10h4v10H4ZM10 20V4h4v16h-4ZM16 20v-7h4v7h-4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <small>Aportación final</small>
+              <strong>$800.00</strong>
+            </div>
+          </article>
+          <article class="metric-card-3 minimum-card-3">
+            <small>Mínimo para libre a bordo combinado</small>
+            <strong>10</strong>
+          </article>
+          <details class="combo-solutions-3">
+            <summary class="combo-solutions-3__summary">
+              <span class="combo-solutions-3__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path d="M7 7h10v10H7V7ZM3 12h4M17 12h4M12 3v4M12 17v4M5.6 5.6 8.4 8.4M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="combo-solutions-3__label">
+                <span>Soluciones compatibles</span>
+                <span class="combo-solutions-3__state" aria-hidden="true">
+                  <span class="combo-solutions-3__state-closed">Ver opciones</span>
+                  <span class="combo-solutions-3__state-open">Sección desplegada</span>
+                </span>
+              </span>
+              <span class="combo-solutions-3__chevron" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="m9 6 6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </summary>
+            <section class="related-3 combo-solutions-3__panel" aria-label="Soluciones compatibles">
+              <h3>Soluciones compatibles</h3>
+              <div class="related-grid-3">
+                ${relatedCards}
+              </div>
+            </section>
+          </details>
+        </section>
+      `;
+
+      const detailLayoutClass = SHOW_MANAGEMENT_ASIDE
+        ? 'selection-detail-3'
+        : 'selection-detail-3 selection-detail-3--sin-manage';
+      const manageAsideHidden = SHOW_MANAGEMENT_ASIDE ? '' : ' hidden';
+
+      return `
+        <div class="${detailLayoutClass}">
+          <section class="intro-card-3" aria-label="Resumen de solución">
+            <div class="intro-summary-3">
+              <span class="badge-3">Solución</span>
+              <h2>${activeName}</h2>
+              ${summaryDescriptionMarkup}
+            </div>
+            <div class="meta-grid-3">
+            <div class="meta-item-3">
+              <div class="meta-icon-3" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM6 21v-2a6 6 0 0 1 12 0v2M9 10v11M15 10v11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <small>Proveedor</small>
+                <strong>ERA</strong>
+              </div>
+            </div>
+            <div class="meta-item-3">
+              <div class="meta-icon-3" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                  <path d="M20 10 11 19l-8-8V3h8l9 7Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M7.5 7.5h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <small>Código</small>
+                <strong>${variant.id}</strong>
+              </div>
+            </div>
+            <div class="meta-item-3">
+              <div class="meta-icon-3" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 7h14M5 12h14M5 17h14M8 4 6 20M18 4l-2 16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <small>SKU</small>
+                <strong>${skuCode}</strong>
+              </div>
+            </div>
+            </div>
+          </section>
+
+          ${step4Commercials}
+
+          <section class="content-grid-3">
+            <article class="details-card-3">
+              <h3>Detalles de la solución</h3>
+              <div class="detail-layout-3">
+                ${photoContent}
+                <div>
+                  <p class="location-copy-3">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M12 21s7-5.3 7-12a7 7 0 1 0-14 0c0 6.7 7 12 7 12Z" stroke="#d20f78" stroke-width="1.8" stroke-linejoin="round"/>
+                      <path d="M12 11.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="#d20f78" stroke-width="1.8"/>
+                    </svg>
+                    <span>La gestión que tienes seleccionada <strong>(GCE29055-48976)</strong> se dirige a:<br>Oaxaca, Santa Cruz Xoxocotlán, Santa Cruz Xoxocotlán</span>
+                  </p>
+                  <button class="detail-action-3" type="button" data-description-toggle aria-expanded="false" aria-controls="detailDescriptionPanel">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M14 2v6h6M8 13h8M8 17h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Descripción
+                    <span>›</span>
+                  </button>
+                  <div class="detail-description-modal detail-description-modal-3" id="detailDescriptionPanel" role="dialog" aria-modal="true" aria-labelledby="detailDescriptionTitle" hidden>
+                    <button class="detail-description-modal__backdrop" type="button" data-description-close aria-label="Cerrar descripción"></button>
+                    <article class="detail-description-modal__card">
+                      <div class="detail-description-modal__head">
+                        <h4 id="detailDescriptionTitle">Descripción</h4>
+                        <button class="detail-description-modal__close" type="button" data-description-close aria-label="Cerrar descripción">×</button>
+                      </div>
+                      <div class="detail-description-modal__body">
+                        <p>${activeDescription.replaceAll('\n', '<br>')}</p>
+                      </div>
+                    </article>
+                  </div>
+                  <button class="detail-action-3" type="button">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Descargar ficha técnica
+                    <span>›</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Sección oculta se debe activar cuando se disponga de esa sección para el actor -->
+            <aside class="manage-card-3" aria-label="Agregar a la gestión seleccionada"${manageAsideHidden}>
+              <header>
+                <h3>Agregar a la gestión seleccionada</h3>
+              </header>
+              <div class="manage-body-3">
+                <label for="cantidadProducto">Cantidad</label>
+                <div class="qty-row-3">
+                  <button type="button" data-qty-change="-1" aria-label="Disminuir cantidad">−</button>
+                  <input id="cantidadProducto" type="number" min="1" value="1" />
+                  <button type="button" data-qty-change="1" aria-label="Aumentar cantidad">+</button>
+                </div>
+                <div class="notice-3">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20ZM12 10v6M12 7h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <span>Mínimo requerido para libre a bordo combinado:<strong>10 unidades</strong></span>
+                </div>
+                <button class="primary-action-3" type="button">
+                  <svg width="25" height="25" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M6 6h15l-1.5 8.5H8L6 3H3M8 19a1 1 0 1 0 0 2 1 1 0 0 0 0-2ZM18 19a1 1 0 1 0 0 2 1 1 0 0 0 0-2ZM10 10h6M13 7v6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  Agregar a la gestión
+                </button>
+              </div>
+            </aside>
+          </section>
+
+          <section class="commercial-table-3" aria-label="Condiciones de la solución">
+            <header class="commercial-table-3__head">
+              <span class="badge-3">Tabla de montos</span>
+              <div>
+                <h3>Resumen</h3>
+                <p>Tabla de aportación final e incentivos aplicables.</p>
+              </div>
+            </header>
+            <div class="commercial-table-3__scroller">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Solución integral</th>
+                    <th>Estado</th>
+                    <th>Municipio</th>
+                    <th>Localidad</th>
+                    <th>Precio en el estado por unidad</th>
+                    <th>Subsidio CMT</th>
+                    <th>Aportación final por unidad</th>
+                    <th>Mínimo para libre abordo</th>
+                    <th>Múltiplos</th>
+                    <th>Incentivo por unidad Enlace</th>
+                    <th>Incentivo por unidad Inspirador</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Kit De Instalación</td>
+                    <td>Todos los estados</td>
+                    <td>Todos los municipios</td>
+                    <td>Todas las localidades</td>
+                    <td>$ 620.0</td>
+                    <td>$ 180.0</td>
+                    <td>$ 440.0</td>
+                    <td>25.0 piezas</td>
+                    <td>1.0</td>
+                    <td>1.33 puntos</td>
+                    <td>3.98 puntos</td>
+                  </tr>
+                  <tr>
+                    <td>Calentador Solar De Gravedad 80 L 8 Tubos</td>
+                    <td>Todos los estados</td>
+                    <td>Todos los municipios</td>
+                    <td>Todas las localidades</td>
+                    <td>$ 5600.0</td>
+                    <td>$ 3340.0</td>
+                    <td>$ 2260.0</td>
+                    <td>25.0 piezas</td>
+                    <td>1.0</td>
+                    <td>10.34 puntos</td>
+                    <td>31.01 puntos</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="related-3" aria-label="Otras soluciones disponibles">
+            <h3>Otras soluciones disponibles</h3>
+            <div class="related-grid-3">
+              ${relatedCards}
+            </div>
+          </section>
+        </div>
+      `;
+    }
+
+    function renderMenu() {
+      chainsStrip.innerHTML = DATA.map(chain => stripButtonTemplate(chain, chain.id === activeChainId)).join('');
+    }
+
+    function setupChainsDrag() {
+      let isPointerDown = false;
+      let isDragging = false;
+      let suppressClick = false;
+      let startX = 0;
+      let scrollStart = 0;
+      const dragThreshold = 6;
+
+      chainsStrip.addEventListener('pointerdown', (event) => {
+        isPointerDown = true;
+        isDragging = false;
+        startX = event.clientX;
+        scrollStart = chainsStrip.scrollLeft;
+      });
+
+      chainsStrip.addEventListener('pointermove', (event) => {
+        if (!isPointerDown) return;
+        const distance = event.clientX - startX;
+        if (!isDragging && Math.abs(distance) > dragThreshold) {
+          isDragging = true;
+          suppressClick = true;
+          chainsStrip.classList.add('is-dragging');
+        }
+        if (!isDragging) return;
+        chainsStrip.scrollLeft = scrollStart - distance;
+      });
+
+      const stopDragging = () => {
+        isPointerDown = false;
+        isDragging = false;
+        chainsStrip.classList.remove('is-dragging');
+      };
+
+      chainsStrip.addEventListener('pointerup', stopDragging);
+      chainsStrip.addEventListener('pointercancel', stopDragging);
+      chainsStrip.addEventListener('pointerleave', stopDragging);
+
+      chainsStrip.addEventListener('click', (event) => {
+        if (!suppressClick) return;
+        event.preventDefault();
+        event.stopPropagation();
+        suppressClick = false;
+      }, true);
+    }
+
+    function sectionBreadcrumbTemplate(items) {
+      return items.map((item, index) => {
+        const separator = index
+          ? `<span class="section-title-breadcrumb__separator" aria-hidden="true">${item.context ? '&#8729;' : '&rsaquo;'}</span>`
+          : '';
+        const itemClasses = [
+          item.accent ? 'section-title-breadcrumb__current' : '',
+          item.activeSection ? 'section-title-breadcrumb__active-section' : ''
+        ].filter(Boolean).join(' ');
+        const itemMarkup = item.step
+          ? `<button type="button" data-breadcrumb-step="${item.step}">${item.label}</button>`
+          : `<span class="${itemClasses}"${item.current ? ' aria-current="page"' : ''}>${item.label}</span>`;
+        return `${separator}${itemMarkup}`;
+      }).join('');
+    }
+
+    function renderStepBreadcrumb(chain, product) {
+      const hotspot = getActiveHotspot();
+      const subcategory = getActiveSubcategory();
+
+      if (currentStep === 1) {
+        productsTitle.innerHTML = sectionBreadcrumbTemplate([
+          { label: 'Categor\u00eda', current: true }
+        ]);
+        return;
+      }
+
+      if (currentStep === 2) {
+        brandProductsTitle.innerHTML = sectionBreadcrumbTemplate([
+          { step: 1, label: 'Categor\u00eda' },
+          { label: 'Subcategor\u00eda' },
+          ...(hotspot ? [{ label: hotspot.label, accent: true, current: true, context: true }] : [])
+        ]);
+        return;
+      }
+
+      if (currentStep === 3) {
+        typeProductsTitle.innerHTML = sectionBreadcrumbTemplate([
+          { step: 1, label: 'Categor\u00eda' },
+          { step: 2, label: 'Subcategor\u00eda' },
+          { label: 'Tipo' },
+          ...(subcategory ? [{ label: subcategory.label, accent: true, current: true, context: true }] : [])
+        ]);
+        return;
+      }
+
+      if (currentStep === 4) {
+        const inlineBreadcrumb = document.createElement('nav');
+        inlineBreadcrumb.className = 'section-title-breadcrumb detail-inline-breadcrumb';
+        inlineBreadcrumb.setAttribute('aria-label', 'Ruta de navegaci\u00f3n');
+        inlineBreadcrumb.innerHTML = sectionBreadcrumbTemplate([
+          { step: 1, label: 'Categor\u00eda' },
+          { step: 2, label: 'Subcategor\u00eda' },
+          ...(hotspot ? [{ label: hotspot.label, context: true }] : []),
+          { step: 3, label: 'Tipo' },
+          ...(subcategory ? [{ label: subcategory.label, context: true }] : []),
+          { label: 'Detalle', activeSection: true },
+          ...(product ? [{ label: product.name, accent: true, current: true, context: true }] : [])
+        ]);
+        detailsContent.prepend(inlineBreadcrumb);
+      }
+    }
+
+    function renderProducts(chain) {
+      if (isEnabledChain(chain.id)) {
+        const config = getActiveCatalogConfig();
+        activeBrandId = config.catalog[0].id;
+        productsTitle.textContent = 'Catálogo';
+        productsSubtitle.textContent = 'Explora las categor\u00edas disponibles.';
+        productsList.hidden = true;
+        hotspotCatalogList.hidden = false;
+        hotspotCatalogList.innerHTML = config.categories
+          .map(hotspot => hotspotCatalogCardTemplate(hotspot, chain))
+          .join('');
+        return;
+      }
+
+      productsList.hidden = false;
+      hotspotCatalogList.hidden = true;
+      const visibleBrands = getVisibleBrands();
+      if (!visibleBrands.some(brand => brand.id === activeBrandId)) {
+        activeBrandId = null;
+        activeHotspotId = null;
+        activeSubcategoryId = null;
+        activeProductId = null;
+        activeVariantId = null;
+      }
+
+      productsTitle.textContent = 'Proveedores';
+      productsSubtitle.textContent = 'Selecciona un proveedor para consultar sus soluciones disponibles.';
+      productsList.innerHTML = visibleBrands.length
+        ? visibleBrands.map(brand => productTemplate(brand, brand.id === activeBrandId)).join('')
+        : '<div class="selection-empty">No hay proveedores que coincidan con la b\u00fasqueda.</div>';
+    }
+
+    function renderBrandProducts() {
+      const hotspot = getActiveHotspot();
+      const subcategories = getActiveSubcategories();
+
+      if (!subcategories.some(group => group.id === activeSubcategoryId)) {
+        activeSubcategoryId = null;
+        activeProductId = null;
+        activeVariantId = null;
+      }
+
+      brandProductsSubtitle.textContent = hotspot
+        ? 'Selecciona una subcategor\u00eda para consultar sus tipos disponibles.'
+        : 'Selecciona una categor\u00eda del cat\u00e1logo para ver sus subcategor\u00edas.';
+      brandProductsList.innerHTML = subcategories.length
+        ? subcategories.map(group => subcategoryGroupTemplate(group)).join('')
+        : '<div class="selection-empty">No hay subcategor\u00edas disponibles para esta categor\u00eda.</div>';
+    }
+
+    function renderTypeProducts() {
+      const subcategory = getActiveSubcategory();
+      const products = getTypeProducts();
+
+      if (!products.some(product => product.id === activeProductId)) {
+        activeProductId = null;
+        activeVariantId = null;
+      }
+
+      typeProductsSubtitle.textContent = subcategory
+        ? 'Selecciona un tipo para consultar su detalle.'
+        : 'Selecciona una subcategor\u00eda para ver sus tipos disponibles.';
+      typeProductsList.innerHTML = products.length
+        ? products.map(product => brandProductTemplate(product, product.id === activeProductId)).join('')
+        : '<div class="selection-empty">No hay tipos disponibles para esta subcategor\u00eda.</div>';
+    }
+
+    function renderSelectedDetail(chain, product) {
+      closeDescriptionModal();
+      if (currentStep !== 4 || !product) {
+        detailsContent.innerHTML = '';
+        menuCartCount.textContent = '0';
+        return;
+      }
+      const variant = getActiveVariant();
+      detailsContent.innerHTML = detailsTemplate(chain, product, variant);
+      menuCartCount.textContent = '0';
+    }
+
+    function updateStepVisibility() {
+      if (!explorer) return;
+      explorer.classList.remove('current-step-1', 'current-step-2', 'current-step-3', 'current-step-4');
+      explorer.classList.add(`current-step-${currentStep}`);
+      if (mobileStepBack) mobileStepBack.hidden = currentStep <= 1;
+    }
+
+    function render() {
+      const chain = getActiveChain();
+      document.body.classList.toggle('chain-empty', !isEnabledChain(chain.id));
+      const heroBackgroundUrl = encodeURI(getHeroBackground(chain.id));
+      hero?.style.setProperty('--hero-bg-image', `url("${heroBackgroundUrl}")`);
+      const heroCopy = getHeroCopy(chain);
+      const heroTitleParts = splitHeroTitle(heroCopy.title);
+      if (heroIcon) heroIcon.src = getHeroIconPath(chain.id);
+      heroTitle.textContent = heroTitleParts.heading;
+      if (heroTitleDetail) heroTitleDetail.textContent = heroTitleParts.detail;
+      renderMenu();
+      renderProducts(chain);
+      renderBrandProducts();
+      renderTypeProducts();
+      const product = getActiveProduct();
+      renderSelectedDetail(chain, product);
+      renderStepBreadcrumb(chain, product);
+      updateStepVisibility();
+    }
+
+    function setActiveChain(chainId) {
+      activeChainId = chainId;
+      activeBrandId = isEnabledChain(chainId) ? getActiveCatalogConfig().catalog[0].id : null;
+      if (isEnabledChain(chainId)) {
+        const nextUrl = new URL(window.location.href);
+        nextUrl.searchParams.set('cadena', chainId);
+        window.history.replaceState({}, '', nextUrl);
+      }
+      activeHotspotId = null;
+      activeSubcategoryId = null;
+      activeProductId = null;
+      activeVariantId = null;
+      closeMenu();
+      closeSelection();
+      currentStep = isEnabledChain(chainId) ? 1 : 0;
+      render();
+    }
+
+    function setActiveBrand(brandId) {
+      activeBrandId = brandId;
+      activeHotspotId = null;
+      activeSubcategoryId = null;
+      activeProductId = null;
+      activeVariantId = null;
+      closeSelection();
+      currentStep = 2;
+      render();
+    }
+
+    function setActiveHotspot(categoryId) {
+      const config = getActiveCatalogConfig();
+      if (!config.categorySubcategories[categoryId]) return;
+      activeBrandId = config.catalog[0].id;
+      activeHotspotId = categoryId;
+      activeSubcategoryId = null;
+      activeProductId = null;
+      activeVariantId = null;
+      closeSelection();
+      currentStep = 2;
+      render();
+    }
+
+    function setActiveSubcategory(subcategoryId) {
+      if (!getActiveSubcategories().some(group => group.id === subcategoryId)) return;
+      activeSubcategoryId = subcategoryId;
+      activeProductId = null;
+      activeVariantId = null;
+      closeSelection();
+      currentStep = 3;
+      render();
+    }
+
+    function setActiveProduct(productId) {
+      if (!getTypeProducts().some(product => product.id === productId)) return;
+      activeProductId = productId;
+      const product = getActiveProduct();
+      activeVariantId = product?.variants[0]?.id || null;
+      if (!activeVariantId) return;
+      currentStep = 4;
+      render();
+      openSelection();
+    }
+
+    function openMenu() {
+      menuPanel.classList.add('is-open');
+      menuBackdrop.classList.add('is-open');
+    }
+
+    function closeMenu() {
+      menuPanel.classList.remove('is-open');
+      menuBackdrop.classList.remove('is-open');
+    }
+
+    function openSelection() {
+      selectionPanel.classList.add('is-open');
+      document.body.classList.add('selection-open');
+    }
+
+    function closeSelection() {
+      selectionPanel.classList.remove('is-open');
+      document.body.classList.remove('selection-open');
+      closeDescriptionModal();
+    }
+
+    function openDescriptionModal(toggle) {
+      const panel = detailsContent.querySelector('#detailDescriptionPanel');
+      if (!panel) return;
+
+      activeDescriptionModal = panel;
+      activeDescriptionToggle = toggle;
+      descriptionModalReturn = {
+        parent: panel.parentNode,
+        nextSibling: panel.nextSibling
+      };
+
+      toggle.setAttribute('aria-expanded', 'true');
+      panel.hidden = false;
+      document.body.appendChild(panel);
+      document.body.classList.add('description-modal-open');
+    }
+
+    function closeDescriptionModal() {
+      if (!activeDescriptionModal) {
+        document.body.classList.remove('description-modal-open');
+        return;
+      }
+
+      activeDescriptionModal.hidden = true;
+      activeDescriptionToggle?.setAttribute('aria-expanded', 'false');
+
+      if (descriptionModalReturn?.parent?.isConnected) {
+        descriptionModalReturn.parent.insertBefore(activeDescriptionModal, descriptionModalReturn.nextSibling);
+      } else {
+        activeDescriptionModal.remove();
+      }
+
+      activeDescriptionModal = null;
+      activeDescriptionToggle = null;
+      descriptionModalReturn = null;
+      document.body.classList.remove('description-modal-open');
+    }
+
+    function goToBreadcrumbStep(step) {
+      if (step <= 1) {
+        activeHotspotId = null;
+        activeSubcategoryId = null;
+        activeProductId = null;
+        activeVariantId = null;
+        currentStep = 1;
+        closeSelection();
+      } else if (step === 2 && getActiveHotspot()) {
+        activeSubcategoryId = null;
+        activeProductId = null;
+        activeVariantId = null;
+        currentStep = 2;
+        closeSelection();
+      } else if (step === 3 && getActiveSubcategory()) {
+        activeProductId = null;
+        activeVariantId = null;
+        currentStep = 3;
+        closeSelection();
+      }
+      render();
+    }
+    function isMobileViewport() {
+      return window.matchMedia('(max-width: 899px)').matches;
+    }
+
+    function openSearch() {
+      if (!searchPanel || !isMobileViewport()) return;
+      closeMainMenu();
+      closeMenu();
+      searchPanel.classList.add('is-open');
+      searchPanel.setAttribute('role', 'dialog');
+      searchPanel.setAttribute('aria-modal', 'true');
+      searchToggle?.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('search-panel-open');
+      window.requestAnimationFrame(() => generalSearchInput?.focus());
+    }
+
+    function closeSearch({ restoreFocus = true } = {}) {
+      if (!searchPanel) return;
+      const wasOpen = searchPanel.classList.contains('is-open');
+      searchPanel.classList.remove('is-open');
+      searchPanel.removeAttribute('role');
+      searchPanel.removeAttribute('aria-modal');
+      searchToggle?.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('search-panel-open');
+      if (wasOpen && restoreFocus) searchToggle?.focus();
+    }
+
+    menuToggle?.addEventListener('click', openMenu);
+    menuClose?.addEventListener('click', closeMenu);
+    searchToggle?.addEventListener('click', openSearch);
+    searchClose?.addEventListener('click', () => closeSearch());
+    menuBackdrop.addEventListener('click', () => {
+      closeMenu();
+      closeSelection();
+    });
+
+    selectionToggle?.addEventListener('click', () => {
+      if (!getActiveVariant()) return;
+      currentStep = 4;
+      render();
+      openSelection();
+    });
+
+    selectionClose?.addEventListener('click', () => {
+      currentStep = 3;
+      closeSelection();
+      render();
+    });
+
+    typeClose?.addEventListener('click', () => {
+      activeProductId = null;
+      activeVariantId = null;
+      currentStep = 2;
+      closeSelection();
+      render();
+    });
+
+    productClose?.addEventListener('click', () => {
+      activeHotspotId = null;
+      activeSubcategoryId = null;
+      activeProductId = null;
+      activeVariantId = null;
+      currentStep = 1;
+      closeSelection();
+      render();
+    });
+
+    mobileStepBack?.addEventListener('click', () => {
+      if (currentStep === 4) {
+        selectionClose?.click();
+        return;
+      }
+      if (currentStep === 3) {
+        typeClose?.click();
+        return;
+      }
+      if (currentStep === 2) productClose?.click();
+    });
+
+    explorer?.addEventListener('click', (event) => {
+      const stepButton = event.target.closest('[data-breadcrumb-step]');
+      if (!stepButton) return;
+      goToBreadcrumbStep(Number(stepButton.dataset.breadcrumbStep));
+    });
+    function closeMainMenu() {
+      document.body.classList.remove('mobile-menu-open');
+      mobileMenuToggle?.setAttribute('aria-expanded', 'false');
+      mainMenu?.querySelectorAll('.main-menu__group.is-open').forEach(group => {
+        group.classList.remove('is-open');
+        group.querySelector('[data-menu-group]')?.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    mobileMenuToggle?.addEventListener('click', () => {
+      const isOpen = document.body.classList.toggle('mobile-menu-open');
+      mobileMenuToggle.setAttribute('aria-expanded', String(isOpen));
+      closeMenu();
+    });
+
+    mainMenu?.addEventListener('click', (event) => {
+      const toggle = event.target.closest('[data-menu-group]');
+      if (!toggle) return;
+
+      const group = toggle.closest('.main-menu__group');
+      if (!group) return;
+
+      const isOpen = group.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+
+      mainMenu.querySelectorAll('.main-menu__group.is-open').forEach(item => {
+        if (item === group) return;
+        item.classList.remove('is-open');
+        item.querySelector('[data-menu-group]')?.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!mainMenu || !mobileMenuToggle) return;
+      if (mainMenu.contains(event.target) || mobileMenuToggle.contains(event.target)) return;
+      closeMainMenu();
+    });
+
+    chainsStrip.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-chain-id]');
+      if (!button) return;
+      setActiveChain(button.dataset.chainId);
+    });
+
+    productsList.addEventListener('click', (event) => {
+      const hotspot = event.target.closest('[data-hotspot-product]');
+      if (hotspot) {
+        setActiveHotspot(hotspot.dataset.hotspotProduct);
+        return;
+      }
+
+      const button = event.target.closest('[data-brand-id]');
+      if (!button) return;
+      setActiveBrand(button.dataset.brandId);
+    });
+
+    hotspotCatalogList.addEventListener('click', (event) => {
+      const hotspot = event.target.closest('[data-hotspot-product]');
+      if (!hotspot) return;
+      setActiveHotspot(hotspot.dataset.hotspotProduct);
+    });
+
+    brandProductsList.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-subcategory-id]');
+      if (!button) return;
+      setActiveSubcategory(button.dataset.subcategoryId);
+    });
+
+    typeProductsList.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-product-id]');
+      if (!button) return;
+      setActiveProduct(button.dataset.productId);
+    });
+
+    detailsContent.addEventListener('click', (event) => {
+      const descriptionToggle = event.target.closest('[data-description-toggle]');
+      if (descriptionToggle) {
+        openDescriptionModal(descriptionToggle);
+        return;
+      }
+
+      const descriptionClose = event.target.closest('[data-description-close]');
+      if (descriptionClose) {
+        closeDescriptionModal();
+        return;
+      }
+
+      const qtyButton = event.target.closest('[data-qty-change]');
+      if (!qtyButton) return;
+      const qtyInput = detailsContent.querySelector('#cantidadProducto');
+      if (!qtyInput) return;
+
+      const currentValue = Number(qtyInput.value) || 1;
+      const minValue = Number(qtyInput.min) || 1;
+      const delta = Number(qtyButton.dataset.qtyChange) || 0;
+      qtyInput.value = String(Math.max(minValue, currentValue + delta));
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!activeDescriptionModal) return;
+      if (!event.target.closest('[data-description-close]')) return;
+      closeDescriptionModal();
+    });
+
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        if (searchPanel?.classList.contains('is-open')) {
+          closeSearch();
+          return;
+        }
+        if (activeDescriptionModal) {
+          closeDescriptionModal();
+          return;
+        }
+        closeMainMenu();
+        closeMenu();
+        if (currentStep === 4) {
+          currentStep = 3;
+          closeSelection();
+          render();
+          return;
+        }
+        if (currentStep === 3) {
+          activeProductId = null;
+          activeVariantId = null;
+          currentStep = 2;
+          render();
+          return;
+        }
+        if (currentStep === 2) {
+          activeHotspotId = null;
+          activeSubcategoryId = null;
+          activeProductId = null;
+          activeVariantId = null;
+          currentStep = 1;
+          render();
+          return;
+        }
+        closeSelection();
+      }
+    });
+    window.addEventListener('resize', () => {
+      if (!isMobileViewport()) {
+        closeSearch({ restoreFocus: false });
+        closeMainMenu();
+        closeSelection();
+      }
+    });
+
+    setupChainsDrag();
+    render();
