@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inicio de Gestión</title>
+  <link rel="stylesheet" href="estilos-plataforma-3.css" />
+</head>
+<body class="platform-shell-page start-flow-page">
+  <div class="app-shell">
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-label="Abrir menú principal" aria-expanded="false" aria-controls="mainMenu">
+      <span aria-hidden="true">&#9776;</span>
+      <span>Menú</span>
+    </button>
+
+    <nav class="main-menu" id="mainMenu" aria-label="Menú principal">
+      <a href="propuesta-inicio.html" class="main-menu__item main-menu__item--home">
+        <span class="main-menu__icon main-menu__icon--image" aria-hidden="true"><img src="img/logo-cmt.png" alt="" /></span>
+        <span>Inicio</span>
+      </a>
+
+      <a href="propuesta-cadenas-1.html" class="main-menu__item">
+        <span class="main-menu__icon main-menu__icon--image" aria-hidden="true"><img src="img/meb-icono.png" alt="" /></span>
+        <span>MEB CMT</span>
+      </a>
+
+      <a href="#" class="main-menu__item">
+        <span class="main-menu__icon" aria-hidden="true">&#128717;&#65039;</span>
+        <span>Mis gestiones</span>
+      </a>
+
+      <div class="main-menu__group">
+        <button class="main-menu__item main-menu__toggle" type="button" data-menu-group="reuniones" aria-expanded="false">
+          <span class="main-menu__icon" aria-hidden="true">&#128197;</span>
+          <span>Reuniones</span>
+          <span class="main-menu__chevron" aria-hidden="true">+</span>
+        </button>
+        <div class="main-menu__sublist" data-menu-target="reuniones">
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">&#128221;</span>
+            <span>Agendar reunión</span>
+          </a>
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">&#128338;</span>
+            <span>Reuniones programadas</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="main-menu__group">
+        <button class="main-menu__item main-menu__toggle" type="button" data-menu-group="cursos" aria-expanded="false">
+          <span class="main-menu__icon" aria-hidden="true">&#127891;</span>
+          <span>Mis cursos</span>
+          <span class="main-menu__chevron" aria-hidden="true">+</span>
+        </button>
+        <div class="main-menu__sublist" data-menu-target="cursos">
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">&#128216;</span>
+            <span>Capacitación</span>
+          </a>
+        </div>
+      </div>
+
+      <a href="propuesta-listado-cubicaje.html" class="main-menu__item">
+        <span class="main-menu__icon" aria-hidden="true">&#128230;</span>
+        <span>Cubicaje</span>
+      </a>
+      <!-- Va contener los 2 videos tutoriales actuales-->
+      <a href="#" class="main-menu__item">
+        <span class="main-menu__icon" aria-hidden="true">&#9654;</span>
+        <span>Tutoriales</span>
+      </a>
+
+      <a href="#" class="main-menu__item">
+        <span class="main-menu__icon" aria-hidden="true">&#11088;</span>
+        <span>Yo soy CMT</span>
+      </a>
+      <!--Opción de menú desactivada que sale cuando hay gestión activa-->
+      <!--<a href="#" class="main-menu__item main-menu__item--cart">
+        <span class="main-menu__icon" aria-hidden="true">&#128722;</span>
+        <span>Canasta / carrito</span>
+        <strong id="menuCartCount">0</strong>
+      </a>-->
+
+      <div class="main-menu__group main-menu__group--user">
+        <button class="main-menu__item main-menu__toggle" type="button" data-menu-group="usuario" aria-expanded="false">
+          <span class="main-menu__icon" aria-hidden="true">&#128100;</span>
+          <span>Mi perfil</span>
+          <span class="main-menu__chevron" aria-hidden="true">+</span>
+        </button>
+        <div class="main-menu__sublist" data-menu-target="usuario">
+          <a href="propuesta-cadenas-1.html" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">&#128100;</span>
+            <span>Yo beneficiario</span>
+          </a>
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">&#128194;</span>
+            <span>Mis gestiones IPS</span>
+          </a>
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">&#128179;</span>
+            <span>Mis tarjetas</span>
+          </a>
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">&#128205;</span>
+            <span>Mis datos de entrega</span>
+          </a>
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">&#128274;</span>
+            <span>Aviso de privacidad</span>
+          </a>
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">&#129658;</span>
+            <span>Teleconsulta</span>
+          </a>
+          <a href="#" class="main-menu__subitem">
+            <span class="main-menu__icon" aria-hidden="true">&#128682;</span>
+            <span>Cerrar sesión</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="frame">
+      <main class="start-page" aria-label="Inicio de gestión">
+        <section class="start-shell">
+          <aside class="start-feature" aria-label="Resumen principal">
+            <div class="start-feature__media" aria-hidden="true"></div>
+            <div class="start-feature__body">
+              <h2><span>Encuentra programas</span> <span>que impulsan tu bienestar.</span></h2>
+              <h3>Accede a soluciones y apoyos de CMT pensados para mejorar tu calidad de vida.</h3>
+              <a class="start-feature__link" href="propuesta-cadenas-1.html">Conocer programas</a>
+            </div>
+          </aside>
+
+          <section class="start-workspace" aria-label="Opciones de inicio">
+            <div class="start-welcome-panel">
+              <div>
+                <span class="start-welcome-panel__hello">Hola Fernando,</span>
+                <h2>¿Qué necesitas gestionar hoy?</h2>
+                <p>Selecciona una opción para comenzar tu gestión.</p>
+              </div>
+            </div>
+
+            <div class="start-route-grid">
+              <a class="start-route-card" href="propuesta-cadenas-1.html">
+                <div class="start-route-card__media" aria-hidden="true"></div>
+                <strong>Grupos comunitarios</strong>
+                <small>Explora programas por cadena y arma una gestión comunitaria.</small>
+                <span class="start-route-card__cta" aria-hidden="true">
+                  Entrar
+                  <span>→</span>
+                </span>
+              </a>
+              <a class="start-route-card start-route-card--accent" href="propuesta-cadenas-1.html">
+                <div class="start-route-card__media" aria-hidden="true"></div>
+                <strong>Inversión pública y social</strong>
+                <small>Consulta proveedores, soluciones, variantes y montos.</small>
+                <span class="start-route-card__cta" aria-hidden="true">
+                  Entrar
+                  <span>→</span>
+                </span>
+              </a>
+              <a class="start-route-card start-route-card--inclusion is-disabled" aria-disabled="true" tabindex="-1">
+                <div class="start-route-card__media" aria-hidden="true"></div>
+                <strong>Acceso a la Inclusi&oacute;n Financiera</strong>
+                <small>Microcr&eacute;ditos para productividad, patrimonio, vivienda y educaci&oacute;n, con subsidios y pagos de intereses.</small>
+                <span class="start-route-card__cta" aria-hidden="true">
+                  Entrar
+                  <span>&rarr;</span>
+                </span>
+              </a>
+              <a class="start-route-card start-route-card--solidaria start-route-card--accent is-disabled" aria-disabled="true" tabindex="-1">
+                <div class="start-route-card__media" aria-hidden="true"></div>
+                <strong>Aportaci&oacute;n solidaria</strong>
+                <small>CMT apoya con un % en proyectos productivos y educativos.</small>
+                <span class="start-route-card__cta" aria-hidden="true">
+                  Entrar
+                  <span>&rarr;</span>
+                </span>
+              </a>
+            </div>
+
+          </section>
+
+          <aside class="start-insights" aria-label="Mas informacion">
+            <div class="start-insights__carousel" aria-hidden="true">
+              <div class="start-insights__slide start-insights__slide--cadena-1 is-active" data-title="Salud" data-description="Cuida tu bienestar con servicios y apoyos para ti y tu familia." data-link="propuesta-cadenas-1.html"></div>
+              <div class="start-insights__slide start-insights__slide--cadena-2" data-title="Alimentaci&oacute;n" data-description="Fortalece tu nutrici&oacute;n con apoyos alimentarios y h&aacute;bitos saludables." data-link="propuesta-cadenas-1.html"></div>
+              <div class="start-insights__slide start-insights__slide--cadena-3" data-title="Vivienda" data-description="Mejora tu hogar con soluciones y apoyos para vivienda digna." data-link="propuesta-cadenas-1.html"></div>
+              <div class="start-insights__slide start-insights__slide--cadena-4" data-title="Medio ambiente" data-description="Protege tu entorno y contribuye a un futuro m&aacute;s sostenible." data-link="propuesta-cadenas-1.html"></div>
+              <div class="start-insights__slide start-insights__slide--cadena-5" data-title="Energ&iacute;a" data-description="Accede a servicios y apoyos para un uso eficiente de la energ&iacute;a." data-link="propuesta-cadenas-1.html"></div>
+              <div class="start-insights__slide start-insights__slide--cadena-6" data-title="Arte, deporte y juventud" data-description="Desarrolla tu talento y crece con actividades culturales y deportivas." data-link="propuesta-cadenas-1.html"></div>
+              <div class="start-insights__slide start-insights__slide--cadena-7" data-title="Educaci&oacute;n" data-description="Impulsa tu aprendizaje con programas y herramientas educativas." data-link="propuesta-cadenas-1.html"></div>
+              <div class="start-insights__slide start-insights__slide--cadena-8" data-title="Agua" data-description="Accede a servicios y programas para el cuidado y uso responsable del agua." data-link="propuesta-cadenas-1.html"></div>
+              <div class="start-insights__slide start-insights__slide--cadena-9" data-title="Innovaci&oacute;n y gesti&oacute;n del conocimiento" data-description="Transforma tus ideas en soluciones que mejoran tu comunidad." data-link="propuesta-cadenas-1.html"></div>
+              <div class="start-insights__slide start-insights__slide--cadena-10" data-title="Seguridad humana" data-description="Promueve acciones para reducir riesgos y proteger a tu comunidad." data-link="propuesta-cadenas-1.html"></div>
+              <div class="start-insights__slide start-insights__slide--cadena-11" data-title="Inclusi&oacute;n productiva y financiera" data-description="Impulsa tus proyectos con herramientas productivas y financieras." data-link="propuesta-cadenas-1.html"></div>
+            </div>
+            <div class="start-insights__panel" id="sidePanelContent">
+              <h2>Salud</h2>
+              <p>Cuida tu bienestar con servicios y apoyos para ti y tu familia.</p>
+              <a href="propuesta-cadenas-1.html">Ver cadena</a>
+            </div>
+          </aside>
+        </section>
+
+        <section class="start-banner" aria-label="Novedades">
+          <button class="start-banner__control" type="button" data-carousel-prev aria-label="Banner anterior">&#8249;</button>
+          <div class="start-banner__viewport">
+            <article class="start-banner__slide is-active">
+              <img class="start-banner__image" src="img/cintillo/obra_publica.png" alt="Obra pública con diferimientos de pago" />
+              <div class="start-banner__actions">
+                <a href="propuesta-cadenas-1.html">Documento</a>
+                <a href="propuesta-cadenas-1.html">Conoce más</a>
+              </div>
+            </article>
+            <article class="start-banner__slide">
+              <img class="start-banner__image" src="img/cintillo/osmosis_gestio%CC%81n_cintillo.png" alt="Osmosis para gestión comunitaria" />
+              <div class="start-banner__actions">
+                <a href="propuesta-cadenas-1.html">Documento</a>
+                <a href="propuesta-cadenas-1.html">Conoce más</a>
+              </div>
+            </article>
+            <article class="start-banner__slide">
+              <img class="start-banner__image" src="img/cintillo/inversio%CC%81n_empresarial.png" alt="Inversión empresarial" />
+              <div class="start-banner__actions">
+                <a href="propuesta-cadenas-1.html">Documento</a>
+                <a href="propuesta-cadenas-1.html">Conoce más</a>
+              </div>
+            </article>
+            <article class="start-banner__slide">
+              <img class="start-banner__image" src="img/cintillo/soluciones_hidricas.png" alt="Soluciones hídricas" />
+              <div class="start-banner__actions">
+                <a href="propuesta-cadenas-1.html">Documento</a>
+                <a href="propuesta-cadenas-1.html">Conoce más</a>
+              </div>
+            </article>
+          </div>
+          <button class="start-banner__control" type="button" data-carousel-next aria-label="Banner siguiente">&#8250;</button>
+        </section>
+
+        <div class="start-video-modal" id="videoModal" hidden>
+          <button class="start-video-modal__backdrop" type="button" data-video-close aria-label="Cerrar tutorial"></button>
+          <section class="start-video-modal__card" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle">
+            <header>
+              <h2 id="videoModalTitle">Tutorial</h2>
+              <button type="button" data-video-close aria-label="Cerrar tutorial">&times;</button>
+            </header>
+            <div class="start-video-modal__frame">
+              <span>Vista previa del tutorial</span>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="propuesta-inicio.js"></script>
+</body>
+</html>
