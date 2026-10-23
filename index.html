@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mapa de México · Filtros</title>
+  <link rel="stylesheet" href="mapa.css">
+  <script src="mapa.js" defer></script>
+  <script src="filtros.js" defer></script>
+</head>
+<body>
+  <!-- Contenedor independiente: insertar esta sección dentro de la página de destino. -->
+  <section class="territory-explorer" id="territory-explorer" aria-label="Mapa y filtros territoriales">
+  <svg class="map-icons" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icon-filters" viewBox="0 0 24 24"><path d="M4 7h16M4 17h16"/><rect x="8" y="4" width="4" height="6" rx="1"/><rect x="14" y="14" width="4" height="6" rx="1"/></symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="icon-building" viewBox="0 0 24 24"><path d="m3 8 9-5 9 5H3ZM5 10v9m5-9v9m4-9v9m5-9v9M3 21h18"/></symbol>
+    <symbol id="icon-training" viewBox="0 0 24 24"><path d="m2 8 10-5 10 5-10 5L2 8Zm4 2v6c3 3 9 3 12 0v-6M22 8v7"/></symbol>
+    <symbol id="icon-contact" viewBox="0 0 24 24"><circle cx="8" cy="7" r="3"/><path d="M2 20v-2a6 6 0 0 1 10-4m3-8h6v8h-3l-3 3V6Z"/></symbol>
+    <symbol id="icon-agreement" viewBox="0 0 24 24"><path d="m3 9 3-5 4 2h4l4-2 3 5-3 8-6 4-6-4-3-8Zm6-3-3 5 3 2 4-4 5 4m-9 0 7 6m-5-4 3 5M3 9l3 2m15-2-3 4"/></symbol>
+    <symbol id="icon-rules" viewBox="0 0 24 24"><path d="M8 3H5a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-3"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="m7 11 1 1 2-2m3 1h4m-10 6 1 1 2-2m3 1h4"/></symbol>
+    <symbol id="icon-categories" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="icon-products" viewBox="0 0 24 24"><path d="m12 3 9 5v9l-9 5-9-5V8l9-5Zm-9 5 9 5 9-5M12 13v9M7.5 5.5l9 5V15"/></symbol>
+    <symbol id="icon-eraser" viewBox="0 0 24 24"><path d="m15 3 6 6a1 1 0 0 1 0 1.5L11 21H6l-4-4a1 1 0 0 1 0-1.5L13.5 3a1 1 0 0 1 1.5 0ZM7 10l7 7M11 21h10"/></symbol>
+    <symbol id="icon-cart" viewBox="0 0 24 24"><path d="M3 4h2l3 12h11l2-9H6M9 12h11"/><circle cx="10" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></symbol>
+    <symbol id="icon-ips" viewBox="0 0 24 24"><path d="m3 13 4-4 5 3 5-3 4 4-6 7H9l-6-7ZM3 13l-1-2 3-5 3 2m13 5 1-2-3-5-3 2M9 14l5 4m-3-6 3-2"/></symbol>
+    <symbol id="icon-chevron" viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></symbol>
+    <symbol id="icon-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="icon-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-5-5 5 5-5 5"/></symbol>
+  </svg>
+
+    <aside class="filter-panel" id="filter-panel" aria-label="Seleccionar filtros">
+      <div class="filter-heading">
+        <h2><svg aria-hidden="true"><use href="#icon-filters"/></svg>Filtros <span class="filter-count" id="filter-count" hidden>0</span></h2>
+        <button class="clear-button" type="reset" form="map-filters" aria-label="Limpiar todos los filtros" title="Restablecer todos los filtros"><svg aria-hidden="true"><use href="#icon-eraser"/></svg><span>Limpiar</span></button>
+      </div>
+      <form id="map-filters" class="filter-form">
+        <div class="filter-scroll">
+          <details class="filter-group" open>
+            <summary><span class="group-icon"><svg aria-hidden="true"><use href="#icon-pin"/></svg></span><span>Territorio</span><svg class="chevron" aria-hidden="true"><use href="#icon-chevron"/></svg></summary>
+            <div class="group-content">
+              <fieldset class="scope-options">
+                <legend class="sr-only">Seleccionar territorio</legend>
+                <label><input type="radio" name="scope" value="country" checked><span>Todo el país</span></label>
+                <label><input type="radio" name="scope" value="state"><span>Estado</span></label>
+                <label><input type="radio" name="scope" value="municipality"><span>Municipio</span></label>
+              </fieldset>
+              <div class="field" id="state-field" hidden><label for="state">Estado</label><select id="state" name="state" disabled><option value="">Selecciona un estado</option>
+                <option>Aguascalientes</option>
+                <option>Baja California</option>
+                <option>Baja California Sur</option>
+                <option>Campeche</option>
+                <option>Chiapas</option>
+                <option>Chihuahua</option>
+                <option>Ciudad de México</option>
+                <option>Coahuila</option>
+                <option>Colima</option>
+                <option>Durango</option>
+                <option>Estado de México</option>
+                <option>Guanajuato</option>
+                <option>Guerrero</option>
+                <option>Hidalgo</option>
+                <option>Jalisco</option>
+                <option>Michoacán</option>
+                <option>Morelos</option>
+                <option>Nayarit</option>
+                <option>Nuevo León</option>
+                <option>Oaxaca</option>
+                <option>Puebla</option>
+                <option>Querétaro</option>
+                <option>Quintana Roo</option>
+                <option>San Luis Potosí</option>
+                <option>Sinaloa</option>
+                <option>Sonora</option>
+                <option>Tabasco</option>
+                <option>Tamaulipas</option>
+                <option>Tlaxcala</option>
+                <option>Veracruz</option>
+                <option>Yucatán</option>
+                <option>Zacatecas</option></select></div>
+              <div class="field" id="municipality-field" hidden><label for="municipality">Municipio</label><input id="municipality" name="municipality" type="text" placeholder="Escribe el municipio" maxlength="100" disabled></div>
+            </div>
+          </details>
+
+          <details class="filter-group" open>
+            <summary><span class="group-icon"><svg aria-hidden="true"><use href="#icon-building"/></svg></span><span>Instituciones</span><svg class="chevron" aria-hidden="true"><use href="#icon-chevron"/></svg></summary>
+            <div class="group-content institution-options">
+              <label class="check-row"><input type="checkbox" name="active" id="institution-active"><span>Activas</span></label>
+              <div class="subfields" id="active-fields" hidden>
+                <div class="field"><label for="institution-name">Nombre de la institución</label><input id="institution-name" name="institutionName" type="text" placeholder="Todas las instituciones" maxlength="120" disabled></div>
+                <label class="check-row"><input type="checkbox" name="hasManagement" id="has-management" disabled><span>Que tengan gestiones</span></label>
+                <fieldset class="period-fields" id="period-fields" hidden disabled>
+                  <legend>Periodo de gestiones</legend>
+                  <div class="date-pair"><div class="field"><label for="period-from">Desde</label><input type="date" id="period-from" name="periodFrom"></div><div class="field"><label for="period-to">Hasta</label><input type="date" id="period-to" name="periodTo"></div></div>
+                </fieldset>
+              </div>
+              <label class="check-row"><input type="checkbox" name="trained"><svg class="option-icon" aria-hidden="true"><use href="#icon-training"/></svg><span>Capacitadas</span></label>
+              <label class="check-row"><input type="checkbox" name="linked"><svg class="option-icon" aria-hidden="true"><use href="#icon-contact"/></svg><span>Con algún enlace</span></label>
+              <label class="check-row"><input type="checkbox" name="agreement"><svg class="option-icon" aria-hidden="true"><use href="#icon-agreement"/></svg><span>Con convenio</span></label>
+              <label class="check-row"><input type="checkbox" name="operatingRules"><svg class="option-icon" aria-hidden="true"><use href="#icon-rules"/></svg><span>Con reglas de operación</span></label>
+            </div>
+          </details>
+
+          <details class="filter-group" open>
+            <summary><span class="group-icon"><svg aria-hidden="true"><use href="#icon-cart"/></svg></span><span>Gestiones IGC</span><svg class="chevron" aria-hidden="true"><use href="#icon-chevron"/></svg></summary>
+            <div class="group-content">
+              <div class="igc-fields" id="igc-fields">
+                <fieldset class="chain-options">
+                  <legend class="field-label-icon"><svg aria-hidden="true"><use href="#icon-categories"/></svg><span>Cadena</span></legend>
+                  <label class="check-row"><input type="checkbox" name="chain" value="Agua"><span>Agua</span></label>
+                  <label class="check-row"><input type="checkbox" name="chain" value="Vivienda"><span>Vivienda</span></label>
+                  <label class="check-row"><input type="checkbox" name="chain" value="Educación"><span>Educación</span></label>
+                  <label class="check-row"><input type="checkbox" name="chain" value="Energía"><span>Energía</span></label>
+                  <label class="check-row"><input type="checkbox" name="chain" value="Medio ambiente"><span>Medio ambiente</span></label>
+                  <label class="check-row"><input type="checkbox" name="chain" value="Salud"><span>Salud</span></label>
+                  <label class="check-row"><input type="checkbox" name="chain" value="Inclusivo"><span>Inclusivo</span></label>
+                </fieldset>
+                <div class="field"><label class="field-label-icon" for="solution"><svg aria-hidden="true"><use href="#icon-products"/></svg><span>Por solución</span></label><select id="solution" name="solution"><option value="">Todas las soluciones</option><option value="Cemento">Cemento</option><option value="Mortero">Mortero</option></select></div>
+              </div>
+            </div>
+          </details>
+
+          <details class="filter-group">
+            <summary><span class="group-icon"><svg aria-hidden="true"><use href="#icon-ips"/></svg></span><span>Gestiones IPS</span><svg class="chevron" aria-hidden="true"><use href="#icon-chevron"/></svg></summary>
+            <div class="group-content"><label class="check-row"><input type="checkbox" name="ips"><span>Mostrar gestiones IPS</span></label></div>
+          </details>
+        </div>
+        <div class="filter-actions">
+          <p id="filter-feedback" class="filter-feedback" role="status" aria-live="polite" hidden></p>
+          <button class="apply-button" type="submit">Aplicar filtros<svg aria-hidden="true"><use href="#icon-arrow"/></svg></button>
+        </div>
+      </form>
+    </aside>
+
+    <div class="map-area">
+      <div class="map-context"><button class="mobile-filters" id="mobile-filters" type="button" aria-expanded="false" aria-controls="filter-panel"><svg aria-hidden="true"><use href="#icon-filters"/></svg><span>Filtros</span></button><span class="scope-badge" id="scope-badge"><svg aria-hidden="true"><use href="#icon-pin"/></svg><span id="scope-label">Todo México</span></span></div>
+      <div class="map-viewport" id="map-viewport" tabindex="0" role="region" aria-label="Mapa de México. Usa más y menos para acercar o alejar y arrastra para desplazarte.">
+        <div class="map-content" id="map-content">
+          <img class="map-image" id="map-image" src="mexico-mapa-politico.png" alt="Mapa de México con divisiones estatales." draggable="false">
+        </div>
+        <span class="map-error" id="map-error" hidden>No se pudo cargar el mapa.</span>
+        <div class="zoom-controls" aria-label="Controles de zoom">
+          <button id="zoom-in" type="button" aria-label="Acercar mapa" title="Acercar (+)"><svg aria-hidden="true"><use href="#icon-plus"/></svg></button>
+          <span id="zoom-value" aria-label="Nivel de zoom">100%</span>
+          <button id="zoom-out" type="button" aria-label="Alejar mapa" title="Alejar (−)"><svg aria-hidden="true"><use href="#icon-minus"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <p class="sr-only" id="map-status" role="status" aria-live="polite" aria-atomic="true"></p>
+  </section>
+</body>
+</html>
